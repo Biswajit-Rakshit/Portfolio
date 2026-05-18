@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biswajit Rakshit | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            accent: '#10b981' // Green theme accent matching Deloitte green & active vibes
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Custom scrollbar for an elegant feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/75 dark:bg-slate-950/75 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#hero" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-brand-600 to-brand-accent bg-clip-text text-transparent">
+                        BR.dev
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-sm font-medium hover:text-brand-500 transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-brand-500 transition-colors">Experience</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-brand-500 transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-brand-500 transition-colors">Projects</a>
+                    <a href="#education" class="text-sm font-medium hover:text-brand-500 transition-colors">Education</a>
+                    <a href="#contact" class="px-4 py-2 text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 rounded-lg shadow-sm transition-all duration-200">Contact Me</a>
+                </div>
+
+                <!-- Dark/Light Theme Switcher & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all focus:outline-none" aria-label="Toggle Theme">
+                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon"></i>
+                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none" aria-label="Toggle Menu">
+                        <i id="menu-icon-bars" class="fa-solid fa-bars text-xl"></i>
+                        <i id="menu-icon-close" class="hidden fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-all">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-semibold text-white bg-brand-600 dark:bg-brand-500 hover:bg-brand-750 transition">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-24 md:pt-24 md:pb-32 flex items-center">
+        <!-- Background accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 dark:bg-brand-600/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-accent/10 dark:bg-brand-accent/5 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brand-500/10 dark:bg-brand-500/20 text-brand-600 dark:text-brand-300 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 bg-brand-accent rounded-full animate-ping"></span>
+                        <span>Open to Remote & Dynamic Opportunities</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-brand-600 to-brand-accent bg-clip-text text-transparent">Biswajit Rakshit</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300 h-8 flex items-center justify-center md:justify-start">
+                        <!-- Dynamic Typing Element -->
+                        <span id="typing-text"></span><span class="animate-pulse text-brand-500 font-normal">|</span>
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto md:mx-0 text-base sm:text-lg leading-relaxed">
+                        Associate Analyst at <strong class="text-slate-900 dark:text-white">Deloitte USI</strong> with expertise in scalable Python APIs, systems analysis, configuration workflows, and databases.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 text-center font-semibold text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 rounded-xl shadow-lg hover:shadow-brand-500/30 dark:hover:shadow-brand-500/10 transform hover:-translate-y-0.5 transition-all">
+                            Get In Touch <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 text-center font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
+                            View Sandbox
+                        </a>
+                    </div>
+
+                    <!-- Tech Badges -->
+                    <div class="pt-6">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Core Stack Focus</p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-500"></i> Python</span>
+                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-solid fa-code text-indigo-500"></i> Django</span>
+                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-solid fa-database text-blue-500"></i> PostgreSQL</span>
+                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-brands fa-aws text-orange-500"></i> AWS Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Portrait Widget -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Background glow elements -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 via-brand-accent to-brand-500 rounded-2xl blur opacity-30 dark:opacity-40 animate-pulse"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col items-center">
+                            <!-- Simulated Profile Avatar placeholder / graphic icon -->
+                            <div class="relative mb-6">
+                                <div class="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-brand-accent flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+                                    BR
+                                </div>
+                                <span class="absolute bottom-1 right-1 w-5 h-5 bg-brand-accent border-4 border-white dark:border-slate-900 rounded-full"></span>
+                            </div>
+
+                            <h3 class="text-xl font-bold">Biswajit Rakshit</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Backend Specialist & Analyst</p>
+
+                            <!-- Mini contact badges -->
+                            <div class="grid grid-cols-2 gap-2 w-full text-xs text-slate-500 dark:text-slate-400 mb-6">
+                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+                                    <i class="fa-solid fa-location-dot text-brand-500"></i>
+                                    <span>West Bengal, India</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+                                    <i class="fa-solid fa-envelope text-brand-500"></i>
+                                    <span class="truncate">biswajitrakshit2003...</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800 col-span-2 justify-center">
+                                    <i class="fa-solid fa-briefcase text-brand-500"></i>
+                                    <span>Deloitte USI (Active)</span>
+                                </div>
+                            </div>
+
+                            <!-- Live Counter Action Widget -->
+                            <div class="flex space-x-3 w-full justify-center">
+                                <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="flex-1 text-center py-2 px-3 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition flex items-center justify-center gap-1.5">
+                                    <i class="fa-brands fa-github text-base"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="flex-1 text-center py-2 px-3 text-xs font-semibold rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 dark:hover:bg-indigo-950/60 transition flex items-center justify-center gap-1.5">
+                                    <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Quick Stats Section -->
+    <section id="about" class="py-20 border-y border-slate-200 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-950/20 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Key Profile Highlight</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Designing High-Performance Systems</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Stat 1 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">Modern API Expert</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Developing robust backend workflows with Django, Celery, & DRF.</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 text-green-600 dark:text-green-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">Deloitte USI Experience</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Performing intricate systems analysis, validation, & issue resolution.</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">Cloud Integration</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Orchestrating serverless setups via AWS EC2, S3, Lambdas & DynamoDB.</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">BCA Graduate</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Solid foundational theory from Techno India Hooghly Campus.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">My Timeline</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Professional Experience</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Single timeline structure showing Deloitte details -->
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-12 pl-6 md:pl-10 space-y-12">
+                
+                <!-- Dot node indicator -->
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gradient-to-tr from-brand-600 to-brand-accent ring-4 ring-slate-50 dark:ring-slate-950"></div>
+
+                <div>
+                    <!-- Deloitte Header Card -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-block bg-brand-accent/15 text-brand-accent dark:text-brand-300 font-bold px-3 py-1 text-xs rounded-md mb-2">ACTIVE CURRENT ROLE</span>
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                Associate Analyst
+                            </h4>
+                            <p class="text-lg text-slate-600 dark:text-slate-300 font-semibold">Deloitte USI</p>
+                        </div>
+                        <span class="mt-2 md:mt-0 text-sm font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200/55 dark:border-slate-800">
+                            <i class="fa-solid fa-calendar-days"></i> Oct 2024 - Present
+                        </span>
+                    </div>
+
+                    <!-- Highlight Bullet Points -->
+                    <div class="space-y-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+                        <!-- Tiny Deloitte green glowing vertical bar -->
+                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-accent to-brand-500"></div>
+
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 italic">Collaborated within large-scale enterprise workflows to analyze complex application anomalies, reproducing conditions in controlled environments to ensure rapid system remediation and stable production workflows.</p>
+
+                        <ul class="space-y-3.5 text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Analyzed application behavior and system workflows to identify mismatches between expected and actual outcomes in a large-scale enterprise system.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Investigated data inconsistencies by examining configuration layers and underlying data relationships across modules.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Applied structured debugging techniques to isolate failure points in interconnected system components.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Worked with business logic configurations and data flows to understand system interactions and edge-case scenarios.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Reproduced complex issues in controlled environments to validate hypotheses and support fix verification.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Collaborated with engineering teams to communicate issue context, expected behavior, and validation scenarios.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Summary Section -->
+    <section id="skills" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-y border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Skills Directory</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">What I Excel At</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Interactive Filters & Search Row -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+                <!-- Search bar -->
+                <div class="relative w-full md:max-w-xs">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="skill-search" placeholder="Search a skill (e.g. AWS)..." class="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 transition-all">
+                </div>
+
+                <!-- Tag Categories -->
+                <div class="flex flex-wrap gap-2 justify-center">
+                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-brand-600 text-white transition-all shadow-sm" data-category="all">All</button>
+                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Languages">Languages</button>
+                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Frameworks">Frameworks</button>
+                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Databases">Databases</button>
+                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Cloud">Cloud & Tools</button>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                
+                <!-- Programming Languages -->
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Languages" data-skill-name="Python">
+                    <div class="text-3xl text-yellow-500 mb-2"><i class="fa-brands fa-python"></i></div>
+                    <span class="block text-sm font-semibold">Python</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Primary Language</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Languages" data-skill-name="SQL">
+                    <div class="text-3xl text-blue-400 mb-2"><i class="fa-solid fa-database"></i></div>
+                    <span class="block text-sm font-semibold">SQL</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Relational Queries</span>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Django">
+                    <div class="text-3xl text-emerald-600 mb-2"><i class="fa-solid fa-code"></i></div>
+                    <span class="block text-sm font-semibold">Django</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Robust MVC Web Apps</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Django REST Framework JWT DRF">
+                    <div class="text-3xl text-red-500 mb-2"><i class="fa-solid fa-gears"></i></div>
+                    <span class="block text-sm font-semibold">Django REST</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">JWT & Custom APIs</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Celery Redis">
+                    <div class="text-3xl text-green-500 mb-2"><i class="fa-solid fa-clock"></i></div>
+                    <span class="block text-sm font-semibold">Celery</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Async Task Queues</span>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="PostgreSQL">
+                    <div class="text-3xl text-blue-500 mb-2"><i class="fa-solid fa-server"></i></div>
+                    <span class="block text-sm font-semibold">PostgreSQL</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Primary Enterprise DB</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="Amazon DynamoDB AWS Dynamo NoSQL">
+                    <div class="text-3xl text-blue-600 mb-2"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <span class="block text-sm font-semibold">Amazon DynamoDB</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">AWS Managed NoSQL</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="Redis">
+                    <div class="text-3xl text-red-600 mb-2"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <span class="block text-sm font-semibold">Redis</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Caching & Celery Broker</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="MySQL">
+                    <div class="text-3xl text-blue-400 mb-2"><i class="fa-solid fa-database"></i></div>
+                    <span class="block text-sm font-semibold">MySQL</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Relational Database</span>
+                </div>
+
+                <!-- Cloud & Tools -->
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="AWS Amazon Web Services EC2 S3 Lambda IAM">
+                    <div class="text-3xl text-orange-500 mb-2"><i class="fa-brands fa-aws"></i></div>
+                    <span class="block text-sm font-semibold">AWS Cloud</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">EC2, S3, Lambdas, IAM</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="Git">
+                    <div class="text-3xl text-amber-600 mb-2"><i class="fa-brands fa-git-alt"></i></div>
+                    <span class="block text-sm font-semibold">Git</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Version Control</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="GitHub">
+                    <div class="text-3xl text-slate-900 dark:text-slate-100 mb-2"><i class="fa-brands fa-github"></i></div>
+                    <span class="block text-sm font-semibold">GitHub</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">Collaborative Coding</span>
+                </div>
+
+                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="Postman API Testing">
+                    <div class="text-3xl text-orange-600 mb-2"><i class="fa-solid fa-circle-play"></i></div>
+                    <span class="block text-sm font-semibold">Postman</span>
+                    <span class="text-xs text-slate-400 dark:text-slate-500">API Documentation</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Live Interactive Django REST API Simulator Sandbox -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Featured Project</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">CineReview REST API Simulator</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-4">
+                    Below is the core architectural breakdown of my primary project, paired with an <strong>Interactive Sandbox Dashboard</strong>. You can test authorization states, GET movie logs, and simulate real object-level CRUD actions inside a live mock API terminal!
+                </p>
+            </div>
+
+            <!-- Cinematic Review API Card & Simulator Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Left Details Info (5 Cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-3">
+                            <span class="p-3 bg-indigo-100 dark:bg-indigo-950/50 text-brand-600 dark:text-brand-300 rounded-xl">
+                                <i class="fa-solid fa-film text-xl"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xl font-bold">CineReview API</h4>
+                                <p class="text-xs text-indigo-500 dark:text-indigo-400 font-semibold uppercase tracking-wider">Django REST Framework (DRF)</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                            A production-ready cinema and video streaming review backend platform. Admins can efficiently add, modify, or delete movies and streaming profiles, while verified users browse titles and construct granular movie critiques.
+                        </p>
+
+                        <!-- Key Architecture Specs -->
+                        <div class="space-y-3">
+                            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400">Core Architecture Features</h5>
+                            
+                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-lock"></i></span>
+                                <span><strong>JWT Authentication:</strong> Secure token exchange layers to prevent spoofed sessions.</span>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-shield-halved"></i></span>
+                                <span><strong>Object-Level Permissions:</strong> Strict backend logic preventing users from updating or deleting critiques submitted by others.</span>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-database"></i></span>
+                                <span><strong>Optimized Queries:</strong> Designed via Django ORM using relation models representing platform streaming hosts.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repository CTA Button -->
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6 flex justify-between items-center">
+                        <span class="text-xs font-semibold text-slate-400">Status: Complete & Tested</span>
+                        <a href="https://github.com/Biswajit-Rakshit/CineReview-API" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-600 dark:text-indigo-400 hover:underline">
+                            View GitHub Repo <i class="fa-brands fa-github text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side Interactive Sandbox (7 Cols) -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col overflow-hidden text-slate-300 shadow-2xl relative">
+                    <!-- Console Header bar -->
+                    <div class="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800/80">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                            <span class="text-xs text-slate-400 font-mono ml-3 font-semibold">CineReview-sandbox_v1.0.py</span>
+                        </div>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded font-mono">DRF Engine</span>
+                    </div>
+
+                    <!-- Controls Dashboard -->
+                    <div class="bg-slate-950/50 p-4 border-b border-slate-800 flex flex-wrap gap-2 items-center text-xs justify-between">
+                        <!-- Simulated Auth State -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-slate-400">Auth Token:</span>
+                            <span id="api-jwt-badge" class="px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-mono">AnonymousUser</span>
+                            <button id="api-toggle-auth-btn" class="ml-2 px-2.5 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition active:scale-95">
+                                Log In (JWT)
+                            </button>
+                        </div>
+
+                        <!-- Current user label -->
+                        <div class="text-slate-400 font-mono">
+                            Logged User: <span id="current-username" class="text-white font-bold">None</span>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint buttons row -->
+                    <div class="bg-slate-950/30 p-3 border-b border-slate-800/60 flex flex-wrap gap-2">
+                        <button onclick="runSandboxRequest('GET_MOVIES')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
+                            <span class="text-emerald-400 font-bold">GET</span> /api/movies/
+                        </button>
+                        <button onclick="runSandboxRequest('GET_REVIEWS')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
+                            <span class="text-emerald-400 font-bold">GET</span> /api/movies/1/reviews/
+                        </button>
+                        <button onclick="openSandboxPostModal()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
+                            <span class="text-yellow-400 font-bold">POST</span> /api/reviews/1/create/
+                        </button>
+                        <button onclick="runSandboxRequest('PUT_OTHER_REVIEW')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
+                            <span class="text-blue-400 font-bold">PUT</span> /api/review/other-user-99/
+                        </button>
+                    </div>
+
+                    <!-- Output Console Body -->
+                    <div class="flex-1 p-4 font-mono text-xs overflow-y-auto max-h-[300px] min-h-[220px] space-y-3 bg-slate-900/90 text-slate-300">
+                        <p class="text-slate-500">// System Response log loaded. Feel free to execute interactive mock commands above.</p>
+                        <div id="sandbox-console-log" class="space-y-4">
+                            <!-- Injected requests will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Interactive Post Dialog inside API Explorer (Hidden by default) -->
+                    <div id="sandbox-post-dialog" class="hidden absolute inset-0 bg-slate-950/95 flex flex-col items-center justify-center p-6 z-25">
+                        <div class="w-full max-w-sm bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-xs text-yellow-400">POST /api/movies/1/reviews/</span>
+                                <button onclick="closeSandboxPostModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 text-[10px] uppercase font-bold mb-1">Select Rating (1-5 Stars)</label>
+                                <select id="sandbox-post-rating" class="w-full bg-slate-800 text-white rounded p-1.5 text-xs focus:ring-1 focus:ring-indigo-500">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                                    <option value="3">⭐⭐⭐ (3/5)</option>
+                                    <option value="2">⭐⭐ (2/5)</option>
+                                    <option value="1">⭐ (1/5)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 text-[10px] uppercase font-bold mb-1">Critique Comment</label>
+                                <textarea id="sandbox-post-comment" class="w-full bg-slate-800 text-white rounded p-1.5 text-xs h-16 resize-none focus:ring-1 focus:ring-indigo-500" placeholder="Excellent cinematography and pacing!"></textarea>
+                            </div>
+                            <button onclick="submitSandboxPostReview()" class="w-full py-2 bg-brand-600 hover:bg-brand-500 text-white rounded text-xs font-bold transition">
+                                Dispatch Authorized Request
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-y border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Qualifications</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Professional Certifications</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Certs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Cert 1 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3.5">
+                            <span class="w-12 h-12 bg-yellow-500/10 text-yellow-500 rounded-xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-brands fa-python"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-lg font-bold">Python Django – The Practical Guide</h4>
+                                <p class="text-xs text-slate-400 font-semibold uppercase">Udemy Credential</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Acquired hands-on experience architectural design strategies in standard Django applications. Gained depth in Model-View-Controller patterns, Django Object Relational Mapping (ORM), database transaction layers, custom forms, and template routing models.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                        <span class="font-medium text-slate-400">Skills: Django ORM, REST, MVC</span>
+                        <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono text-[10px] text-slate-500">Udemy Academy</span>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3.5">
+                            <span class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-brands fa-google"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-lg font-bold">Create Media Search & Recommendation with AI</h4>
+                                <p class="text-xs text-slate-400 font-semibold uppercase">Google Cloud Platform</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Practical experience constructing state-of-the-art media lookup platforms. Leveraged pre-built AI pipelines, contextual semantic text embeddings, vector matching tools, and recommendation modules on Google Cloud systems.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                        <span class="font-medium text-slate-400">Skills: AI, GCP Cloud APIs, Search</span>
+                        <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono text-[10px] text-slate-500">Google Cloud</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">My Background</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Academic Journey</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Single large educational card -->
+            <div class="bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col md:flex-row items-start justify-between gap-6 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 dark:bg-indigo-500/5 rounded-full blur-2xl pointer-events-none transition group-hover:bg-indigo-500/10"></div>
+                
+                <div class="space-y-4 max-w-xl">
+                    <span class="inline-block bg-brand-500/10 text-brand-600 dark:text-brand-300 font-bold px-3 py-1 text-xs rounded-md">BCA GRADUATE</span>
+                    <h4 class="text-2xl font-bold text-slate-900 dark:text-white">Bachelor of Computer Application</h4>
+                    
+                    <p class="text-slate-700 dark:text-slate-300 font-medium">Techno India Hooghly Campus</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Acquired comprehensive knowledge in computational design, software frameworks, network dynamics, systems architecture, structures, and relational DBMS query logic.
+                    </p>
+
+                    <div class="flex items-center gap-2 text-xs text-slate-400">
+                        <i class="fa-solid fa-location-dot text-brand-accent"></i>
+                        <span>Hooghly, West Bengal, India</span>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 flex items-center gap-1.5 bg-slate-100 dark:bg-slate-850 px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-bold border border-slate-200/40 dark:border-slate-800 text-sm">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>2021 - 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Hub Section -->
+    <section id="contact" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Say Hello</h2>
+                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Contact Connection Hub</h3>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                <!-- Left Details Info (5 Cols) -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h4 class="text-2xl font-bold text-slate-900 dark:text-white">Let's build something exceptional!</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Whether you are looking to hire a backend python developer, discuss automation scripts, build standard REST framework layers, or just check general systems architecture strategies, feel free to dispatch a note!
+                        </p>
+
+                        <!-- Static direct coordinates -->
+                        <div class="space-y-4">
+                            <!-- Mobile -->
+                            <a href="tel:+917595858430" class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:-translate-y-0.5 transition hover:shadow-sm">
+                                <span class="w-10 h-10 bg-indigo-50 dark:bg-indigo-950 text-brand-600 dark:text-brand-300 rounded-lg flex items-center justify-center text-sm"><i class="fa-solid fa-phone"></i></span>
+                                <div>
+                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400">Call / WhatsApp</span>
+                                    <span class="text-sm font-semibold">+91 7595858430</span>
+                                </div>
+                            </a>
+
+                            <!-- Mail -->
+                            <a href="mailto:biswajitrakshit2003@gmail.com" class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:-translate-y-0.5 transition hover:shadow-sm">
+                                <span class="w-10 h-10 bg-indigo-50 dark:bg-indigo-950 text-brand-600 dark:text-brand-300 rounded-lg flex items-center justify-center text-sm"><i class="fa-solid fa-envelope"></i></span>
+                                <div>
+                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400">Direct Email</span>
+                                    <span class="text-sm font-semibold truncate">biswajitrakshit2003@gmail.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Direct Social Badge Cards -->
+                    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex gap-4">
+                        <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="flex-1 py-3 text-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 hover:text-brand-500 transition font-semibold text-xs flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-base"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="flex-1 py-3 text-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 hover:text-indigo-500 transition font-semibold text-xs flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right dynamic composer form (7 Cols) -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
+                                <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
+                                <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Subject</label>
+                            <input type="text" id="contact-subject" required placeholder="Project Collaboration Pitch" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Message</label>
+                            <textarea id="contact-message" required rows="4" placeholder="Hello Biswajit, I visited your CineReview API Sandbox..." class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 resize-none transition"></textarea>
+                        </div>
+
+                        <!-- Feedback Message Banner -->
+                        <div id="contact-form-feedback" class="hidden p-3.5 rounded-lg text-xs font-medium text-center"></div>
+
+                        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white rounded-xl text-sm font-bold shadow-lg transition duration-200">
+                            Generate Email Draft <i class="fa-solid fa-paper-plane ml-1.5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-xs text-center transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <p class="text-sm font-bold text-slate-100">Biswajit Rakshit</p>
+            <p class="max-w-md mx-auto leading-relaxed text-slate-500">
+                Sleek backend developer specializing in standard MVC architecture models, cloud deployment layers, and systematic production analyses.
+            </p>
+            <div class="flex justify-center space-x-6 text-slate-500">
+                <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="mailto:biswajitrakshit2003@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+                <a href="tel:+917595858430" class="hover:text-white transition"><i class="fa-solid fa-phone text-lg"></i></a>
+            </div>
+            <div class="pt-6 border-t border-slate-800/80 text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span>&copy; <span id="current-year"></span> Biswajit Rakshit. All rights reserved.</span>
+                <span class="flex items-center gap-1.5 text-slate-500 hover:text-slate-400 transition-colors">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-500 animate-pulse"></i> Crafted with Gemini & Tailwind
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Area -->
+    <script>
+        // Setup Current Year in Footer
+        document.getElementById('current-year').innerText = new Date().getFullYear();
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function updateThemeUI() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+
+        // Initialize theme based on preference or previous state
+        if (localStorage.getItem('color-theme') === 'light' || 
+            (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+        updateThemeUI();
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            updateThemeUI();
+        });
+
+        // Responsive Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconBars = document.getElementById('menu-icon-bars');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIconBars.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when nav link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconBars.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // Dynamic Hero Header Typing Effect
+        const words = [
+            "Associate Analyst @ Deloitte USI",
+            "Python Backend Engineer",
+            "Django API Specialist",
+            "BCA Graduate & Dev Analyst"
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 1500;
+        const typingTextElem = document.getElementById('typing-text');
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingTextElem.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingTextElem.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, pauseTime);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 300);
+            } else {
+                setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+            }
+        }
+        
+        // Start typing effect on load
+        type();
+
+        // Skills Search & Filter system
+        const skillSearchInput = document.getElementById('skill-search');
+        const skillCards = document.querySelectorAll('.skill-card');
+        const skillCategoryButtons = document.querySelectorAll('.skill-category-btn');
+        let currentActiveCategory = 'all';
+
+        function filterSkills() {
+            const searchQuery = skillSearchInput.value.toLowerCase().trim();
+            skillCards.forEach(card => {
+                const skillCategory = card.getAttribute('data-category');
+                const skillName = card.getAttribute('data-skill-name').toLowerCase();
+                
+                const matchesCategory = currentActiveCategory === 'all' || skillCategory === currentActiveCategory;
+                const matchesSearch = skillName.includes(searchQuery);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        skillSearchInput.addEventListener('input', filterSkills);
+
+        skillCategoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active buttons styles
+                skillCategoryButtons.forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-400');
+                });
+                btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-400');
+                btn.classList.add('bg-brand-600', 'text-white');
+
+                currentActiveCategory = btn.getAttribute('data-category');
+                filterSkills();
+            });
+        });
+
+        // CineReview REST API Simulator Engine
+        let isAuthorizedJWT = false;
+        let mockUserReviews = [];
+
+        function updateSandboxAuthUI() {
+            const badge = document.getElementById('api-jwt-badge');
+            const btn = document.getElementById('api-toggle-auth-btn');
+            const nameBadge = document.getElementById('current-username');
+
+            if (isAuthorizedJWT) {
+                badge.textContent = "JWT: Valid Token (Bearer eyJhbGci...)";
+                badge.className = "px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono";
+                btn.textContent = "Log Out (Clear Token)";
+                btn.className = "ml-2 px-2.5 py-1 bg-red-600 hover:bg-red-500 text-white rounded font-medium transition active:scale-95";
+                nameBadge.textContent = "Verified_Critic_Biswajit";
+                nameBadge.className = "text-emerald-400 font-bold";
+            } else {
+                badge.textContent = "AnonymousUser";
+                badge.className = "px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-mono";
+                btn.textContent = "Log In (JWT)";
+                btn.className = "ml-2 px-2.5 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition active:scale-95";
+                nameBadge.textContent = "None";
+                nameBadge.className = "text-slate-500";
+            }
+        }
+
+        document.getElementById('api-toggle-auth-btn').addEventListener('click', () => {
+            isAuthorizedJWT = !isAuthorizedJWT;
+            updateSandboxAuthUI();
+            logConsoleAction(
+                "SYSTEM", 
+                isAuthorizedJWT ? "JWT Token Generated. Bearer Session set in Authorization Headers." : "JWT Token cleared from storage. Request Authorization headers removed."
+            );
+        });
+
+        function logConsoleAction(method, detail, responseJson = null) {
+            const consoleBox = document.getElementById('sandbox-console-log');
+            const entry = document.createElement('div');
+            entry.className = "space-y-1.5 border-l border-slate-700/60 pl-3 py-1";
+
+            const timestamp = new Date().toLocaleTimeString();
+            let methodColor = "text-blue-400";
+            if (method === "GET") methodColor = "text-emerald-400";
+            if (method === "POST") methodColor = "text-yellow-400";
+            if (method === "SYSTEM") methodColor = "text-indigo-400";
+
+            let headerHTML = `<div class="flex items-center justify-between text-[11px]"><span class="font-bold ${methodColor}">[${method}] ${detail}</span><span class="text-slate-500 font-semibold">${timestamp}</span></div>`;
+            let responseHTML = "";
+
+            if (responseJson) {
+                responseHTML = `<pre class="bg-slate-950 p-2.5 rounded text-slate-400 text-[10px] overflow-x-auto border border-slate-800">${JSON.stringify(responseJson, null, 2)}</pre>`;
+            }
+
+            entry.innerHTML = headerHTML + responseHTML;
+            consoleBox.appendChild(entry);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+        }
+
+        function runSandboxRequest(type) {
+            if (type === 'GET_MOVIES') {
+                const mockMovies = [
+                    { id: 1, title: "Inception", platform: "Netflix", reviews_count: 12 },
+                    { id: 2, title: "Interstellar", platform: "Prime Video", reviews_count: 8 },
+                    { id: 3, title: "The Dark Knight", platform: "HBO Max", reviews_count: 24 }
+                ];
+                logConsoleAction("GET", "Requested resource: /api/movies/", mockMovies);
+            }
+
+            if (type === 'GET_REVIEWS') {
+                const mockReviews = [
+                    { id: 101, movie_id: 1, user: "movie_buff_99", stars: 5, comment: "Incredibly layered plot structures!", self_owned: false },
+                    { id: 102, movie_id: 1, user: "cinema_expert", stars: 4, comment: "Nolan rules. Period.", self_owned: false }
+                ];
+                // Append current user reviews if any
+                const combined = [...mockReviews, ...mockUserReviews];
+                logConsoleAction("GET", "Requested resource: /api/movies/1/reviews/", combined);
+            }
+
+            if (type === 'PUT_OTHER_REVIEW') {
+                // Simulating DRF Object-Level permissions check
+                if (!isAuthorizedJWT) {
+                    logConsoleAction("PUT", "Denied modification: /api/review/other-user-99/", {
+                        detail: "Authentication credentials were not provided.",
+                        status_code: 401
+                    });
+                } else {
+                    logConsoleAction("PUT", "Denied modification: /api/review/other-user-99/", {
+                        detail: "You do not have permission to edit this review. Object ownership required.",
+                        status_code: 403,
+                        drf_permission_class: "IsReviewUserOrReadOnly"
+                    });
+                }
+            }
+        }
+
+        function openSandboxPostModal() {
+            if (!isAuthorizedJWT) {
+                logConsoleAction("POST", "Denied creation on /api/movies/1/reviews/", {
+                    detail: "Authentication credentials were not provided. JWT validation token required.",
+                    status_code: 401
+                });
+                return;
+            }
+            document.getElementById('sandbox-post-dialog').classList.remove('hidden');
+        }
+
+        function closeSandboxPostModal() {
+            document.getElementById('sandbox-post-dialog').classList.add('hidden');
+        }
+
+        function submitSandboxPostReview() {
+            const ratingVal = document.getElementById('sandbox-post-rating').value;
+            const commentText = document.getElementById('sandbox-post-comment').value || "No comments given.";
+
+            const newReview = {
+                id: Math.floor(Math.random() * 1000) + 200,
+                movie_id: 1,
+                user: "Verified_Critic_Biswajit",
+                stars: parseInt(ratingVal),
+                comment: commentText,
+                self_owned: true
+            };
+
+            mockUserReviews.push(newReview);
+            closeSandboxPostModal();
+
+            logConsoleAction("POST", "Authorized submission successful: /api/movies/1/reviews/", {
+                status: "Created",
+                status_code: 201,
+                payload: newReview
+            });
+
+            // Clear input
+            document.getElementById('sandbox-post-comment').value = "";
+        }
+
+        // Contact Form Processing Function
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            const msg = document.getElementById('contact-message').value;
+
+            const feedback = document.getElementById('contact-form-feedback');
+
+            feedback.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'bg-red-500/10', 'text-red-400');
+
+            try {
+                // Draft email via client mailto
+                const recipient = "biswajitrakshit2003@gmail.com";
+                const mailBody = `Hi Biswajit,\n\nMy name is ${name} (${email}).\n\n${msg}\n\nBest regards,\n${name}`;
+                
+                const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+
+                // Open composer
+                window.location.href = mailtoUrl;
+
+                feedback.classList.add('bg-emerald-500/10', 'text-emerald-400');
+                feedback.textContent = "Draft generated! Opening your local email client composer...";
+
+                // Reset form
+                document.getElementById('contact-form').reset();
+            } catch (err) {
+                feedback.classList.add('bg-red-500/10', 'text-red-400');
+                feedback.textContent = "Oops! Unable to initiate client composer automatically.";
+            }
+        }
+    </script>
+</body>
+</html>
