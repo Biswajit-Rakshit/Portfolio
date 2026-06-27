@@ -30,6 +30,14 @@
             }
         }
     </script>
+    <!-- Sync theme storage before paint to prevent flashing -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     <!-- FontAwesome Icons for clean iOS Glyphs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -58,14 +66,14 @@
 
         @keyframes liquid-rotate-2 {
             0% { transform: translate(0px, 0px) scale(1); }
-            50% { transform: translate(-80px, -50px) scale(0.9); }
-            100% { transform: translate(40px, -20px) scale(1.05); }
+            50% { transform: translate(-100px, -80px) scale(0.85); }
+            100% { transform: translate(60px, -40px) scale(1.1); }
         }
 
         @keyframes liquid-rotate-3 {
             0% { transform: translate(0px, 0px) scale(1); }
-            50% { transform: translate(90px, -40px) scale(1.2); }
-            100% { transform: translate(-60px, 60px) scale(0.9); }
+            50% { transform: translate(120px, -60px) scale(1.25); }
+            100% { transform: translate(-80px, 90px) scale(0.9); }
         }
 
         /* Frosted Liquid Glass System Cards */
@@ -796,9 +804,11 @@
             const html = document.documentElement;
             if (html.classList.contains('dark')) {
                 html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
                 showToast("System Theme", "Switched to Light mode layout.", "theme");
             } else {
                 html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
                 showToast("System Theme", "Switched to Dark mode layout.", "theme");
             }
         }
@@ -1060,7 +1070,7 @@
             }
 
             // Update Desktop Sidebar active styling state
-            const sidebarBtns = document.querySelectorAll('aside nav text-slate-500, aside nav button');
+            const sidebarBtns = document.querySelectorAll('aside nav button');
             sidebarBtns.forEach(btn => {
                 btn.className = "w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left";
             });
