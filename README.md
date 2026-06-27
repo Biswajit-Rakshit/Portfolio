@@ -1,12 +1,12 @@
-# ⚡ AI-Crafted One-Page Portfolio
+# AI-Crafted One-Page Portfolio
 
 Welcome to my personal portfolio! This is a sleek, **single-page website** built entirely in collaboration with **Google Gemini**. It serves as both a professional showcase and a proof-of-concept for AI-driven rapid development.
 
-👉 **Live Demo:** https://biswajit-rakshit.github.io/Portfolio/
+**Live Demo:** https://biswajit-rakshit.github.io/Portfolio/
 
 ---
 
-## 🛠️ The Tech & AI Stack
+## The Tech & AI Stack
 
 This entire project lives inside a streamlined, single-page architecture designed for maximum loading speed and clean execution.
 
@@ -17,7 +17,7 @@ This entire project lives inside a streamlined, single-page architecture designe
 
 ---
 
-## 🚀 Features
+## Features
 
 *   **Single-Page Architecture:** Smooth navigation without page reloads.
 *   **Fully Responsive:** Seamlessly scales from desktop monitors down to mobile screens.
@@ -26,7 +26,7 @@ This entire project lives inside a streamlined, single-page architecture designe
 
 ---
 
-## 🧠 The Workflow
+## The Workflow
 
 Building a great one-page site with AI requires clear direction. I worked with Gemini to:
 1.  Establish a cohesive visual theme.
@@ -35,7 +35,7 @@ Building a great one-page site with AI requires clear direction. I worked with G
 
 ---
 
-## 📦 How to View Locally
+## How to View Locally
 
 Because this is a lightweight, one-page setup, running it locally is incredibly simple:
 
@@ -48,7 +48,7 @@ Because this is a lightweight, one-page setup, running it locally is incredibly 
 
 ---
 
-## 📬 Let's Connect
+## Let's Connect
 
 I'm always down to chat about AI implementation, tech, or new opportunities!
 
