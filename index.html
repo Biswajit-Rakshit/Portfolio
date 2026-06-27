@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biswajit Rakshit | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Biswajit Rakshit | Backend Engineer</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,1106 +12,1074 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            accent: '#10b981' // Green theme accent matching Deloitte green & active vibes
+                        iosBlue: '#007AFF',
+                        iosGreen: '#34C759',
+                        iosGray: {
+                            50: '#F2F2F7',
+                            100: '#E5E5EA',
+                            200: '#D1D1D6',
+                            800: '#1C1C1E',
+                            900: '#1C1C1E'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Inter', 'sans-serif'],
+                        mono: ['SF Mono', 'Fira Code', 'monospace']
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome Icons for clean iOS Glyphs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
+        /* Smooth liquid gradient blobs */
+        .liquid-blob-1 {
+            background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, rgba(0, 122, 255, 0) 70%);
+            animation: liquid-rotate-1 25s infinite alternate ease-in-out;
         }
-        /* Custom scrollbar for an elegant feel */
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        .liquid-blob-2 {
+            background: radial-gradient(circle, rgba(52, 199, 89, 0.12) 0%, rgba(52, 199, 89, 0) 70%);
+            animation: liquid-rotate-2 30s infinite alternate ease-in-out;
         }
-        ::-webkit-scrollbar-track {
-            background: transparent;
+
+        .liquid-blob-3 {
+            background: radial-gradient(circle, rgba(175, 82, 222, 0.12) 0%, rgba(175, 82, 222, 0) 70%);
+            animation: liquid-rotate-3 20s infinite alternate ease-in-out;
         }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #374151;
-            border-radius: 4px;
+
+        @keyframes liquid-rotate-1 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(60px, 80px) scale(1.15); }
+            100% { transform: translate(-30px, 30px) scale(0.95); }
         }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
+
+        @keyframes liquid-rotate-2 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(-80px, -50px) scale(0.9); }
+            100% { transform: translate(40px, -20px) scale(1.05); }
+        }
+
+        @keyframes liquid-rotate-3 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(90px, -40px) scale(1.2); }
+            100% { transform: translate(-60px, 60px) scale(0.9); }
+        }
+
+        /* Frosted Liquid Glass System Cards */
+        .glass-ios {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px) saturate(190%);
+            -webkit-backdrop-filter: blur(20px) saturate(190%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Dark mode companion */
+        .dark .glass-ios {
+            background: rgba(28, 28, 30, 0.7);
+            backdrop-filter: blur(20px) saturate(190%);
+            -webkit-backdrop-filter: blur(20px) saturate(190%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Native iOS Squircles */
+        .squircle-lg {
+            border-radius: 2.2rem;
+        }
+        .squircle-md {
+            border-radius: 1.4rem;
+        }
+        .squircle-sm {
+            border-radius: 0.8rem;
+        }
+
+        /* Hide default scrollbars while keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Dynamic view selector animation wrapper */
+        .app-view {
+            transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-200 min-h-screen relative overflow-x-hidden font-sans flex flex-col transition-colors duration-300 pb-20 md:pb-0">
 
-    <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/75 dark:bg-slate-950/75 border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#hero" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-brand-600 to-brand-accent bg-clip-text text-transparent">
-                        BR.dev
-                    </a>
-                </div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-20 -left-20 w-[500px] h-[500px] liquid-blob-1 rounded-full"></div>
+        <div class="absolute top-[35%] -right-20 w-[600px] h-[600px] liquid-blob-2 rounded-full"></div>
+        <div class="absolute -bottom-20 left-[15%] w-[450px] h-[450px] liquid-blob-3 rounded-full"></div>
+    </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="text-sm font-medium hover:text-brand-500 transition-colors">About</a>
-                    <a href="#experience" class="text-sm font-medium hover:text-brand-500 transition-colors">Experience</a>
-                    <a href="#skills" class="text-sm font-medium hover:text-brand-500 transition-colors">Skills</a>
-                    <a href="#projects" class="text-sm font-medium hover:text-brand-500 transition-colors">Projects</a>
-                    <a href="#education" class="text-sm font-medium hover:text-brand-500 transition-colors">Education</a>
-                    <a href="#contact" class="px-4 py-2 text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 rounded-lg shadow-sm transition-all duration-200">Contact Me</a>
-                </div>
-
-                <!-- Dark/Light Theme Switcher & Mobile Menu Button -->
-                <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:ring-2 hover:ring-brand-500 transition-all focus:outline-none" aria-label="Toggle Theme">
-                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon"></i>
-                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun"></i>
-                    </button>
-
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 focus:outline-none" aria-label="Toggle Menu">
-                        <i id="menu-icon-bars" class="fa-solid fa-bars text-xl"></i>
-                        <i id="menu-icon-close" class="hidden fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- iOS Native App Style Status Bar (Header) -->
+    <header class="fixed top-0 left-0 right-0 h-12 bg-white/45 dark:bg-[#1C1C1E]/50 backdrop-blur-lg border-b border-black/5 dark:border-white/5 z-50 flex items-center justify-between px-6 select-none">
+        <!-- System Time -->
+        <div class="flex items-center gap-1 text-slate-900 dark:text-white">
+            <span id="statusBar-time" class="text-xs font-semibold tracking-tight font-mono">Sat Jun 27 09:41 PM</span>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-all">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Experience</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Skills</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Projects</a>
-                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-brand-500 transition">Education</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-semibold text-white bg-brand-600 dark:bg-brand-500 hover:bg-brand-750 transition">Contact Me</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative overflow-hidden pt-12 pb-24 md:pt-24 md:pb-32 flex items-center">
-        <!-- Background accents -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 dark:bg-brand-600/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-accent/10 dark:bg-brand-accent/5 rounded-full blur-2xl pointer-events-none"></div>
         
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Content -->
-                <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-brand-500/10 dark:bg-brand-500/20 text-brand-600 dark:text-brand-300 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
-                        <span class="w-2 h-2 bg-brand-accent rounded-full animate-ping"></span>
-                        <span>Open to Remote & Dynamic Opportunities</span>
+        <!-- Status Symbols & Controls -->
+        <div class="flex items-center gap-3 text-xs text-slate-900 dark:text-white">
+            <!-- Theme Toggle -->
+            <button onclick="toggleDarkMode()" class="hover:opacity-75 transition active:scale-95 flex items-center justify-center text-[14px]" title="Toggle Display Mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- iPadOS Style Sidebar + Viewport Container -->
+    <div class="max-w-7xl mx-auto w-full flex-grow pt-16 px-4 md:px-8 z-10 flex flex-col md:flex-row gap-6 relative">
+        
+        <!-- SIDEBAR MENU: Displayed on Desktop and Tablet (iPadOS Style) -->
+        <aside class="hidden md:flex flex-col w-64 shrink-0 h-[calc(100vh-6rem)] sticky top-20 select-none space-y-6">
+            <!-- App Monogram / Branding -->
+            <div class="glass-ios squircle-md p-4 flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-iosBlue to-sky-400 flex items-center justify-center text-white font-extrabold text-sm shadow-md">
+                     <img src="images/ProfilePhoto.jpg" alt="ProfilePhoto" class="rounded-full p-0.5" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <span class="hidden text-xs">BR</span>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Biswajit Rakshit</h3>
+                    <p class="text-[10px] font-semibold text-slate-500 dark:text-zinc-500 font-mono tracking-wider">BACKEND ENGINEER</p>
+                </div>
+            </div>
+
+            <!-- iPadOS Translucent Navigation Menu List -->
+            <div class="glass-ios squircle-md p-3 flex-grow flex flex-col justify-between overflow-y-auto no-scrollbar">
+                <nav class="space-y-1">                    
+                    <button onclick="switchView('profile-app')" id="sidebar-profile-app" class="nav-btn-active w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-900 dark:text-white bg-white/60 dark:bg-white/10 transition active:scale-95 text-left border border-black/5 dark:border-white/5">
+                        <i class="fa-solid fa-user-astronaut text-iosBlue text-sm w-5 text-center"></i>
+                        <span>Profile</span>
+                    </button>
+
+                    <button onclick="switchView('experience-app')" id="sidebar-experience-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-briefcase text-iosGreen text-sm w-5 text-center"></i>
+                        <span>Experience</span>
+                    </button>
+
+                    <button onclick="switchView('projects-app')" id="sidebar-projects-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-layer-group text-orange-500 text-sm w-5 text-center"></i>
+                        <span>Projects</span>
+                    </button>
+
+                    <button onclick="switchView('sandbox-app')" id="sidebar-sandbox-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-terminal text-indigo-500 text-sm w-5 text-center"></i>
+                        <span>Sandbox</span>
+                    </button>
+
+                    <button onclick="switchView('skills-app')" id="sidebar-skills-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-code text-violet-500 text-sm w-5 text-center"></i>
+                        <span>Skills</span>
+                    </button>
+
+                    <button onclick="switchView('certs-app')" id="sidebar-certs-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-award text-amber-500 text-sm w-5 text-center"></i>
+                        <span>Certifications</span>
+                    </button>
+
+                    <button onclick="switchView('edu-app')" id="sidebar-edu-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-graduation-cap text-teal-500 text-sm w-5 text-center"></i>
+                        <span>Education</span>
+                    </button>
+
+                    <button onclick="switchView('contact-app')" id="sidebar-contact-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-envelope text-pink-500 text-sm w-5 text-center"></i>
+                        <span>Contacts</span>
+                    </button>
+                </nav>
+
+                <!-- iPadOS Sidebar Utilities -->
+                <div class="border-t border-black/5 dark:border-white/5 pt-4 mt-3 flex items-center justify-center px-2">
+                    <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest font-bold">v2.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN APPLICATION VIEWS SECTION -->
+        <div class="flex-grow min-w-0 md:py-4">
+            
+            <!-- APP 1: Summary / Profile -->
+            <div id="profile-app" class="app-view md:h-[calc(100vh-6rem)]">
+                <div class="glass-ios squircle-lg p-6 md:p-10 h-full flex flex-col items-center justify-center overflow-y-auto no-scrollbar">
+                    
+                    <!-- Profile Pic (Centered, Circular) -->
+                    <div class="relative group shrink-0 w-32 h-32 md:w-36 md:h-36 mb-6">
+                        <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-iosBlue to-sky-400 blur-md opacity-60"></div>
+                        <div class="relative w-full h-full rounded-full bg-[#E5E5EA] dark:bg-zinc-800 border-4 border-white dark:border-zinc-950 flex flex-col items-center justify-center text-slate-800 dark:text-white overflow-hidden shadow-inner">
+                            <img src="images/ProfilePhoto.jpg" alt="Portfolio Image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="hidden text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-tr from-iosBlue to-indigo-500">&lt;BR&gt;</span>
+                        </div>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                        Hi, I'm <span class="bg-gradient-to-r from-brand-600 to-brand-accent bg-clip-text text-transparent">Biswajit Rakshit</span>
-                    </h1>
+                    <!-- Bio Header & Summary -->
+                    <div class="text-center space-y-4 max-w-2xl w-full">
+                        <div>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-iosBlue/10 text-iosBlue border border-iosBlue/15 uppercase tracking-wide inline-block mb-3">Developer Profile</span>
+                            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Biswajit Rakshit</h1>
+                            <p class="text-sm md:text-base font-semibold text-slate-500 dark:text-zinc-400 font-mono mt-1">Associate Analyst & Backend Engineer</p>
+                        </div>
+                        
+                        <div class="pt-2 pb-6 border-b border-black/5 dark:border-white/5">
+                            <p class="text-slate-600 dark:text-zinc-400 text-sm md:text-base leading-relaxed">
+                                Backend developer with <strong class="text-slate-900 dark:text-white">1.5+ years of enterprise experience</strong> at Deloitte and a portfolio of production-grade Python/Django REST API projects. Skilled in object-oriented programming, API development, secure authentication systems, role-based access control, and scalable database solutions using PostgreSQL. Actively transitioning into a full-time backend engineering role, with hands-on project experience in JWT authentication, custom permissions, and API documentation via Swagger/OpenAPI.
+                            </p>
+                        </div>
+                    </div>
 
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300 h-8 flex items-center justify-center md:justify-start">
-                        <!-- Dynamic Typing Element -->
-                        <span id="typing-text"></span><span class="animate-pulse text-brand-500 font-normal">|</span>
+                    <!-- System Info widget -->
+                    <div class="mt-6 p-5 rounded-2xl bg-white/45 dark:bg-zinc-900/40 border border-white/20 dark:border-zinc-800 space-y-4 w-full max-w-3xl">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block text-center">DEVICE CAPABILITIES</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono text-center">
+                            <div>
+                                <span class="block text-slate-400 mb-1">ENGINE</span>
+                                <span class="font-bold text-slate-900 dark:text-white">Python / DRF</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 mb-1">DATABASE</span>
+                                <span class="font-bold text-slate-900 dark:text-white">PostgreSQL</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 mb-1">CLOUD LAYER</span>
+                                <span class="font-bold text-slate-900 dark:text-white">AWS (Lambda/S3)</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400 mb-1">TDD SUITE</span>
+                                <span class="font-bold text-iosGreen">85%+ Passing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- APP 2: Professional Experience Timeline -->
+            <div id="experience-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- iOS Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-iosGreen text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Professional History</h2>
+                                <p class="text-xs text-slate-500 font-mono">Timeline Overview</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-iosGreen bg-iosGreen/10 border border-iosGreen/15 px-3 py-1 rounded-full uppercase">Active</span>
+                    </div>
+
+                    <!-- Deloitte Node -->
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-black/5 dark:border-zinc-800">
+                            <div class="flex flex-row gap-3">
+                                <img src="images/deloitte-com-logo.png" alt="Deloitte" class="h-10 mt-1 rounded-full" onerror="this.src='https://placehold.co/40x40/000000/34C759?text=D';">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Associate Analyst</h3>
+                                    <p class="text-sm font-semibold text-slate-500 dark:text-zinc-400">Deloitte USI — Enterprise Systems</p>
+                                </div>
+                            </div>
+                            <div class="text-left sm:text-right">
+                                <span class="text-xs font-bold font-mono text-slate-500 bg-slate-200/50 dark:bg-zinc-800 px-3 py-1 rounded-full">Oct 2024 - Present</span>
+                                <p class="text-[10px] text-slate-400 font-mono mt-1">Bengaluru, India</p>
+                            </div>
+                        </div>
+
+                        <!-- Bullet points -->
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-100/60 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-800 flex gap-3">
+                                <div class="text-iosGreen mt-0.5 shrink-0"><i class="fa-solid fa-circle-check text-xs"></i></div>
+                                <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                    Partnered with 5+ cross-functional teams to gather and document business requirements, contributing to delivery of enterprise applications used by 1,000+ users and accelerating feature deployment cycles by 15%.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-100/60 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-800 flex gap-3">
+                                <div class="text-iosGreen mt-0.5 shrink-0"><i class="fa-solid fa-circle-check text-xs"></i></div>
+                                <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                    Investigated and resolved 50+ application issues through structured root-cause analysis, executed 100+ test cases, and implemented 10+ process improvements across the application lifecycle.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-100/60 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-800 flex gap-3">
+                                <div class="text-iosGreen mt-0.5 shrink-0"><i class="fa-solid fa-circle-check text-xs"></i></div>
+                                <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                    Identified 12 recurring workflow inefficiencies and collaborated on resolution strategies, reducing data processing time by 25% and addressing 30+ critical issues.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-100/60 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-800 flex gap-3">
+                                <div class="text-iosGreen mt-0.5 shrink-0"><i class="fa-solid fa-trophy text-xs"></i></div>
+                                <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                    Recognized with two individual Spot Awards for consistent delivery quality, ownership, and contributing to a 95% stakeholder satisfaction rating.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 3: Projects Portfolio -->
+            <div id="projects-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Featured Projects</h2>
+                                <p class="text-xs text-slate-500 font-mono">Open Source Portfolio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Grid -->
+                    <div class="grid grid-cols-1 gap-6">
+                        
+                        <!-- AegisMind Project -->
+                        <div class="p-5 rounded-2xl bg-white/40 dark:bg-zinc-900/40 border border-black/5 dark:border-zinc-800 hover:bg-white/60 dark:hover:bg-zinc-900/60 transition duration-300">
+                            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">Python</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">Django REST</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">PostgreSQL</span>
+                                        <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">JWT Auth</span>
+                                    </div>
+                                    <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">AegisMind API</h3>
+                                    <p class="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                        Designed and developed a privacy-focused backend platform enabling 100+ employees to securely submit sentiment, workload, and burnout feedback. Built secure survey APIs utilizing custom DRF throttling (one submission per week) and engineered department-level analytics enforcing strict k-anonymity privacy standards (minimum 5 responses).
+                                    </p>
+                                    <ul class="text-xs text-slate-500 dark:text-zinc-400 space-y-1.5 list-disc list-inside ml-3 pt-2">
+                                        <li>Implemented JWT authentication, role-based access control, and custom permissions.</li>
+                                        <li>Achieved 85%+ test coverage through comprehensive TDD.</li>
+                                        <li>Integrated Swagger/OpenAPI documentation via drf-spectacular.</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col gap-2 shrink-0 md:w-36">
+                                    <a href="https://github.com/Biswajit-Rakshit/AegisMind_API" target="_blank" class="w-full py-2 rounded-xl bg-slate-800 dark:bg-zinc-800 text-white text-xs font-bold flex items-center justify-center gap-2 hover:opacity-90 transition">
+                                        <i class="fa-brands fa-github"></i> Source Code
+                                    </a>
+                                    <button onclick="switchView('sandbox-app')" class="w-full py-2 rounded-xl bg-indigo-500 text-white text-xs font-bold flex items-center justify-center gap-2 hover:opacity-90 transition">
+                                        <i class="fa-solid fa-terminal"></i> Launch Simulator
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 4: Sandbox Terminal -->
+            <div id="sandbox-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">AegisMind Playground</h2>
+                                <p class="text-xs text-slate-500 font-mono">REST API Simulator</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span id="api-status-pill" class="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-slate-200/50 dark:bg-zinc-800 text-slate-500 dark:text-zinc-400 uppercase border border-black/5 dark:border-white/5">IDLE</span>
+                        </div>
+                    </div>
+
+                    <!-- Sandbox description -->
+                    <div class="mb-6 p-4 rounded-2xl bg-white/45 dark:bg-zinc-900/40 border border-white/20 dark:border-zinc-800 space-y-2">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">ABOUT AEGIS_MIND_CORE</span>
+                        <p class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                            Privacy-focused survey aggregation platform for employee burnouts. This sandbox simulates actual Django REST Framework operations. Use the buttons below to run logins, post surveys, and watch k-anonymity protocols enforce security.
+                        </p>
+                    </div>
+
+                    <!-- Grid Layout for controls and console output -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- Left Pane: Control Panel (5 Cols) -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <!-- Auth Panel -->
+                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">1. Authentication</span>
+                                    <span id="auth-badge" class="px-2 py-0.5 rounded text-[9px] font-bold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/15">MISSING JWT</span>
+                                </div>
+                                <button onclick="simulateJWTAuth()" class="w-full py-2 rounded-xl bg-indigo-500 hover:opacity-90 active:scale-95 transition text-white text-xs font-bold font-mono">
+                                    POST /accounts/api/token/
+                                </button>
+                            </div>
+
+                            <!-- Survey Submit Panel -->
+                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">2. Submit Telemetry</span>
+                                    <span id="throttle-counter" class="text-[9px] font-mono font-bold text-slate-500">Weekly: 0/1</span>
+                                </div>
+                                
+                                <!-- Custom feedback scoring inputs -->
+                                <div class="grid grid-cols-2 gap-2 text-[9px] pb-1">
+                                    <div>
+                                        <label class="block font-bold">Stress (1-10)</label>
+                                        <input type="range" id="stress_val" min="1" max="10" value="6" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold">Workload (1-10)</label>
+                                        <input type="range" id="workload_val" min="1" max="10" value="7" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold mt-1">Mood (1-10)</label>
+                                        <input type="range" id="mood_val" min="1" max="10" value="8" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold mt-1">Burnout (1-10)</label>
+                                        <input type="range" id="burnout_val" min="1" max="10" value="4" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                                    </div>
+                                </div>
+
+                                <button onclick="simulateSubmitSurvey()" class="w-full py-2 rounded-xl bg-violet-600 hover:opacity-90 active:scale-95 transition text-white text-xs font-bold font-mono">
+                                    POST /surveys/survey-submit/
+                                </button>
+                            </div>
+
+                            <!-- k-Anonymity privacy checker -->
+                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">3. Query Analytics</span>
+                                </div>
+                                <p class="text-[10px] text-slate-500 leading-relaxed">Metrics are blocked for cohorts containing fewer than 5 respondents (e.g. Marketing).</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="simulateAnalytics('Engineering')" class="py-2 rounded-xl bg-slate-100 dark:bg-zinc-800 hover:bg-slate-200 dark:hover:bg-zinc-700 font-mono text-[9px] text-slate-800 dark:text-zinc-200 border border-black/5 dark:border-white/5">
+                                        GET Engineering (k=6)
+                                    </button>
+                                    <button onclick="simulateAnalytics('Marketing')" class="py-2 rounded-xl bg-slate-100 dark:bg-zinc-800 hover:bg-slate-200 dark:hover:bg-zinc-700 font-mono text-[9px] text-slate-800 dark:text-zinc-200 border border-black/5 dark:border-white/5">
+                                        GET Marketing (k=3)
+                                    </button>
+                                </div>
+                                <button onclick="simulateAnalytics('all')" class="w-full py-2 rounded-xl bg-slate-100 dark:bg-zinc-800 hover:bg-slate-200 dark:hover:bg-zinc-700 font-mono text-[9px] text-slate-800 dark:text-zinc-200 border border-black/5 dark:border-white/5">
+                                    GET /analytics/all/
+                                </button>
+                            </div>
+
+                            <button onclick="resetPlayground()" class="w-full py-2 rounded-xl border border-red-500/25 text-red-500 text-xs font-bold transition">
+                                Reset Simulator State
+                            </button>
+                        </div>
+
+                        <!-- Right Pane: REST Output Screen (7 Cols) -->
+                        <div class="lg:col-span-7 flex flex-col min-h-[350px]">
+                            <div class="flex-grow p-4 bg-slate-900 text-zinc-300 rounded-2xl font-mono text-[11px] leading-relaxed relative overflow-auto shadow-inner no-scrollbar">
+                                <pre id="terminal-json" class="text-emerald-400">
+{
+  "sandbox_status": "Ready",
+  "instructions": "Execute requests from the control panel. Watch token handshakes, throttling rate-limits, and k-anonymity compliance filter out targets automatically."
+}
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- APP 5: Skills Hub -->
+            <div id="skills-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-violet-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Skills</h2>
+                                <p class="text-xs text-slate-500 font-mono">Technical Capability</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search filtering widget -->
+                    <div class="relative w-full mb-6">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                        </span>
+                        <input onkeyup="filterSkills(this.value)" type="text" placeholder="Type to filter runtime credentials (e.g. Django, SQL)..." class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/45 dark:bg-zinc-900/50 border border-black/5 dark:border-zinc-800 text-xs text-slate-800 dark:text-zinc-200 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-iosBlue transition-all">
+                    </div>
+
+                    <!-- Grid Layout for categories -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Languages -->
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Languages</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Python</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">SQL</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">OOP</span>
+                            </div>
+                        </div>
+
+                        <!-- Frameworks -->
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Web Frameworks & Core APIs</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django REST Framework (DRF)</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">JWT Authentication</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Throttling</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Serialization</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Custom Permissions</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Stores -->
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Databases & Storage</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">PostgreSQL</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">MySQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Technology & Testing -->
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Ops & Assurance Suites</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Amazon Web Services (AWS)</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Git / GitHub</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Swagger / OpenAPI</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Test-Driven Development (TDD)</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Unit Testing</span>
+                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Postman</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 6: Certifications -->
+            <div id="certs-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Credentials & Certifications</h2>
+                                <p class="text-xs text-slate-500 font-mono">Verified Badges</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificates Grid -->
+                    <div class="space-y-4">
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Verified Credentials</span>
+                        
+                        <!-- Udemy DRF -->
+                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                            <div class="space-y-1">
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase font-mono">Udemy Approved</span>
+                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Build REST APIs with Django REST Framework and Python</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400">Professional specialization focusing on deep serializations, custom DRF throttle controllers, and object permissions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Udemy Django -->
+                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                            <div class="space-y-1">
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase font-mono">Udemy Approved</span>
+                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Python Django: The Practical Guide</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400">Hands-on course focusing on ORM relationship mapping, custom migrations, database templates, and state parameters.</p>
+                            </div>
+                        </div>
+
+                        <!-- HackerRank -->
+                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                            <div class="space-y-1">
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/15 uppercase font-mono">HackerRank Verified</span>
+                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">SQL - Intermediate</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400">Evaluates nested queries, SQL database relationship constraints, and complex execution logic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 7: Education -->
+            <div id="edu-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-teal-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Academic Record</h2>
+                                <p class="text-xs text-slate-500 font-mono">Higher Education</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Node -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                            <div class="space-y-1.5">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Degree</span>
+                                <h4 class="text-lg font-extrabold text-slate-900 dark:text-white">Bachelor of Computer Application (BCA)</h4>
+                                <p class="text-sm text-slate-600 dark:text-zinc-400">Techno India Hooghly Campus <span class="hidden sm:inline">|</span><span class="sm:hidden block mt-0.5"></span> West Bengal, India</p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full text-xs font-bold font-mono text-teal-600 bg-teal-500/10 border border-teal-500/15 shrink-0 self-start sm:self-auto">2021 - 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 8: Contact Mail -->
+             <div id="contact-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios rounded-[2.5rem] p-6 md:p-8">
+                    <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-pink-500 text-base"></i> Contacts & Telemetry
                     </h2>
 
-                    <p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto md:mx-0 text-base sm:text-lg leading-relaxed">
-                        Associate Analyst at <strong class="text-slate-900 dark:text-white">Deloitte USI</strong> with expertise in scalable Python APIs, systems analysis, configuration workflows, and databases.
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
-                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 text-center font-semibold text-white bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 rounded-xl shadow-lg hover:shadow-brand-500/30 dark:hover:shadow-brand-500/10 transform hover:-translate-y-0.5 transition-all">
-                            Get In Touch <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 text-center font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">
-                            View Sandbox
-                        </a>
-                    </div>
-
-                    <!-- Tech Badges -->
-                    <div class="pt-6">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">Core Stack Focus</p>
-                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
-                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-500"></i> Python</span>
-                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-solid fa-code text-indigo-500"></i> Django</span>
-                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-solid fa-database text-blue-500"></i> PostgreSQL</span>
-                            <span class="px-3 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium flex items-center gap-1.5"><i class="fa-brands fa-aws text-orange-500"></i> AWS Cloud</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Interactive Portrait Widget -->
-                <div class="md:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-sm">
-                        <!-- Background glow elements -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 via-brand-accent to-brand-500 rounded-2xl blur opacity-30 dark:opacity-40 animate-pulse"></div>
-                        
-                        <!-- Main Card -->
-                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col items-center">
-                            <!-- Simulated Profile Avatar placeholder / graphic icon -->
-                            <div class="relative mb-6">
-                                <div class="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-brand-accent flex items-center justify-center text-white text-3xl font-bold shadow-lg">
-                                    BR
-                                </div>
-                                <span class="absolute bottom-1 right-1 w-5 h-5 bg-brand-accent border-4 border-white dark:border-slate-900 rounded-full"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="mailto:biswa.rakshit@outlook.com" class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
                             </div>
-
-                            <h3 class="text-xl font-bold">Biswajit Rakshit</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Backend Specialist & Analyst</p>
-
-                            <!-- Mini contact badges -->
-                            <div class="grid grid-cols-2 gap-2 w-full text-xs text-slate-500 dark:text-slate-400 mb-6">
-                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
-                                    <i class="fa-solid fa-location-dot text-brand-500"></i>
-                                    <span>West Bengal, India</span>
-                                </div>
-                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
-                                    <i class="fa-solid fa-envelope text-brand-500"></i>
-                                    <span class="truncate">biswajitrakshit2003...</span>
-                                </div>
-                                <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-lg border border-slate-100 dark:border-slate-800 col-span-2 justify-center">
-                                    <i class="fa-solid fa-briefcase text-brand-500"></i>
-                                    <span>Deloitte USI (Active)</span>
-                                </div>
-                            </div>
-
-                            <!-- Live Counter Action Widget -->
-                            <div class="flex space-x-3 w-full justify-center">
-                                <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="flex-1 text-center py-2 px-3 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition flex items-center justify-center gap-1.5">
-                                    <i class="fa-brands fa-github text-base"></i> GitHub
-                                </a>
-                                <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="flex-1 text-center py-2 px-3 text-xs font-semibold rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 dark:hover:bg-indigo-950/60 transition flex items-center justify-center gap-1.5">
-                                    <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- About / Quick Stats Section -->
-    <section id="about" class="py-20 border-y border-slate-200 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-950/20 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Key Profile Highlight</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Designing High-Performance Systems</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
-
-            <!-- Stats Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Stat 1 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-code-branch"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-1">Modern API Expert</h4>
-                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Developing robust backend workflows with Django, Celery, & DRF.</p>
-                </div>
-
-                <!-- Stat 2 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-green-500/10 text-green-600 dark:text-green-400 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-1">Deloitte USI Experience</h4>
-                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Performing intricate systems analysis, validation, & issue resolution.</p>
-                </div>
-
-                <!-- Stat 3 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-cloud"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-1">Cloud Integration</h4>
-                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Orchestrating serverless setups via AWS EC2, S3, Lambdas & DynamoDB.</p>
-                </div>
-
-                <!-- Stat 4 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-1">BCA Graduate</h4>
-                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Solid foundational theory from Techno India Hooghly Campus.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">My Timeline</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Professional Experience</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
-
-            <!-- Single timeline structure showing Deloitte details -->
-            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-12 pl-6 md:pl-10 space-y-12">
-                
-                <!-- Dot node indicator -->
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gradient-to-tr from-brand-600 to-brand-accent ring-4 ring-slate-50 dark:ring-slate-950"></div>
-
-                <div>
-                    <!-- Deloitte Header Card -->
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <span class="inline-block bg-brand-accent/15 text-brand-accent dark:text-brand-300 font-bold px-3 py-1 text-xs rounded-md mb-2">ACTIVE CURRENT ROLE</span>
-                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                Associate Analyst
-                            </h4>
-                            <p class="text-lg text-slate-600 dark:text-slate-300 font-semibold">Deloitte USI</p>
-                        </div>
-                        <span class="mt-2 md:mt-0 text-sm font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200/55 dark:border-slate-800">
-                            <i class="fa-solid fa-calendar-days"></i> Oct 2024 - Present
-                        </span>
-                    </div>
-
-                    <!-- Highlight Bullet Points -->
-                    <div class="space-y-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
-                        <!-- Tiny Deloitte green glowing vertical bar -->
-                        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-accent to-brand-500"></div>
-
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 italic">Collaborated within large-scale enterprise workflows to analyze complex application anomalies, reproducing conditions in controlled environments to ensure rapid system remediation and stable production workflows.</p>
-
-                        <ul class="space-y-3.5 text-slate-600 dark:text-slate-300 text-sm sm:text-base">
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Analyzed application behavior and system workflows to identify mismatches between expected and actual outcomes in a large-scale enterprise system.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Investigated data inconsistencies by examining configuration layers and underlying data relationships across modules.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Applied structured debugging techniques to isolate failure points in interconnected system components.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Worked with business logic configurations and data flows to understand system interactions and edge-case scenarios.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Reproduced complex issues in controlled environments to validate hypotheses and support fix verification.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="flex-shrink-0 text-brand-accent text-sm mt-1"><i class="fa-solid fa-circle-check"></i></span>
-                                <span>Collaborated with engineering teams to communicate issue context, expected behavior, and validation scenarios.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Summary Section -->
-    <section id="skills" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-y border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Skills Directory</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">What I Excel At</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
-
-            <!-- Interactive Filters & Search Row -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-                <!-- Search bar -->
-                <div class="relative w-full md:max-w-xs">
-                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                    <input type="text" id="skill-search" placeholder="Search a skill (e.g. AWS)..." class="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 transition-all">
-                </div>
-
-                <!-- Tag Categories -->
-                <div class="flex flex-wrap gap-2 justify-center">
-                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-brand-600 text-white transition-all shadow-sm" data-category="all">All</button>
-                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Languages">Languages</button>
-                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Frameworks">Frameworks</button>
-                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Databases">Databases</button>
-                    <button class="skill-category-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-850" data-category="Cloud">Cloud & Tools</button>
-                </div>
-            </div>
-
-            <!-- Skills Grid -->
-            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                
-                <!-- Programming Languages -->
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Languages" data-skill-name="Python">
-                    <div class="text-3xl text-yellow-500 mb-2"><i class="fa-brands fa-python"></i></div>
-                    <span class="block text-sm font-semibold">Python</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Primary Language</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Languages" data-skill-name="SQL">
-                    <div class="text-3xl text-blue-400 mb-2"><i class="fa-solid fa-database"></i></div>
-                    <span class="block text-sm font-semibold">SQL</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Relational Queries</span>
-                </div>
-
-                <!-- Frameworks -->
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Django">
-                    <div class="text-3xl text-emerald-600 mb-2"><i class="fa-solid fa-code"></i></div>
-                    <span class="block text-sm font-semibold">Django</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Robust MVC Web Apps</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Django REST Framework JWT DRF">
-                    <div class="text-3xl text-red-500 mb-2"><i class="fa-solid fa-gears"></i></div>
-                    <span class="block text-sm font-semibold">Django REST</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">JWT & Custom APIs</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Frameworks" data-skill-name="Celery Redis">
-                    <div class="text-3xl text-green-500 mb-2"><i class="fa-solid fa-clock"></i></div>
-                    <span class="block text-sm font-semibold">Celery</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Async Task Queues</span>
-                </div>
-
-                <!-- Databases -->
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="PostgreSQL">
-                    <div class="text-3xl text-blue-500 mb-2"><i class="fa-solid fa-server"></i></div>
-                    <span class="block text-sm font-semibold">PostgreSQL</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Primary Enterprise DB</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="Amazon DynamoDB AWS Dynamo NoSQL">
-                    <div class="text-3xl text-blue-600 mb-2"><i class="fa-solid fa-boxes-stacked"></i></div>
-                    <span class="block text-sm font-semibold">Amazon DynamoDB</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">AWS Managed NoSQL</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="Redis">
-                    <div class="text-3xl text-red-600 mb-2"><i class="fa-solid fa-fire-flame-curved"></i></div>
-                    <span class="block text-sm font-semibold">Redis</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Caching & Celery Broker</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Databases" data-skill-name="MySQL">
-                    <div class="text-3xl text-blue-400 mb-2"><i class="fa-solid fa-database"></i></div>
-                    <span class="block text-sm font-semibold">MySQL</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Relational Database</span>
-                </div>
-
-                <!-- Cloud & Tools -->
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="AWS Amazon Web Services EC2 S3 Lambda IAM">
-                    <div class="text-3xl text-orange-500 mb-2"><i class="fa-brands fa-aws"></i></div>
-                    <span class="block text-sm font-semibold">AWS Cloud</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">EC2, S3, Lambdas, IAM</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="Git">
-                    <div class="text-3xl text-amber-600 mb-2"><i class="fa-brands fa-git-alt"></i></div>
-                    <span class="block text-sm font-semibold">Git</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Version Control</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="GitHub">
-                    <div class="text-3xl text-slate-900 dark:text-slate-100 mb-2"><i class="fa-brands fa-github"></i></div>
-                    <span class="block text-sm font-semibold">GitHub</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">Collaborative Coding</span>
-                </div>
-
-                <div class="skill-card bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center transition hover:-translate-y-1 hover:shadow-md cursor-pointer" data-category="Cloud" data-skill-name="Postman API Testing">
-                    <div class="text-3xl text-orange-600 mb-2"><i class="fa-solid fa-circle-play"></i></div>
-                    <span class="block text-sm font-semibold">Postman</span>
-                    <span class="text-xs text-slate-400 dark:text-slate-500">API Documentation</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section with Live Interactive Django REST API Simulator Sandbox -->
-    <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Featured Project</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">CineReview REST API Simulator</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 mt-4">
-                    Below is the core architectural breakdown of my primary project, paired with an <strong>Interactive Sandbox Dashboard</strong>. You can test authorization states, GET movie logs, and simulate real object-level CRUD actions inside a live mock API terminal!
-                </p>
-            </div>
-
-            <!-- Cinematic Review API Card & Simulator Container -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                
-                <!-- Left Details Info (5 Cols) -->
-                <div class="lg:col-span-5 flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-3">
-                            <span class="p-3 bg-indigo-100 dark:bg-indigo-950/50 text-brand-600 dark:text-brand-300 rounded-xl">
-                                <i class="fa-solid fa-film text-xl"></i>
-                            </span>
                             <div>
-                                <h4 class="text-xl font-bold">CineReview API</h4>
-                                <p class="text-xs text-indigo-500 dark:text-indigo-400 font-semibold uppercase tracking-wider">Django REST Framework (DRF)</p>
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
+                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">biswa.rakshit@outlook.com</span>
                             </div>
-                        </div>
+                        </a>
 
-                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                            A production-ready cinema and video streaming review backend platform. Admins can efficiently add, modify, or delete movies and streaming profiles, while verified users browse titles and construct granular movie critiques.
-                        </p>
-
-                        <!-- Key Architecture Specs -->
-                        <div class="space-y-3">
-                            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400">Core Architecture Features</h5>
-                            
-                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-lock"></i></span>
-                                <span><strong>JWT Authentication:</strong> Secure token exchange layers to prevent spoofed sessions.</span>
+                        <a href="tel:+917595858430" class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-iosGreen/10 text-iosGreen flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
                             </div>
-
-                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-shield-halved"></i></span>
-                                <span><strong>Object-Level Permissions:</strong> Strict backend logic preventing users from updating or deleting critiques submitted by others.</span>
+                            <div>
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Phone</span>
+                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">+91 7595858430</span>
                             </div>
+                        </a>
 
-                            <div class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
-                                <span class="text-brand-accent mt-0.5"><i class="fa-solid fa-database"></i></span>
-                                <span><strong>Optimized Queries:</strong> Designed via Django ORM using relation models representing platform streaming hosts.</span>
+                        <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-iosBlue/10 text-iosBlue flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-linkedin"></i>
                             </div>
-                        </div>
-                    </div>
+                            <div>
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">LinkedIn</span>
+                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">Biswajit--Rakshit</span>
+                            </div>
+                        </a>
 
-                    <!-- Repository CTA Button -->
-                    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6 flex justify-between items-center">
-                        <span class="text-xs font-semibold text-slate-400">Status: Complete & Tested</span>
-                        <a href="https://github.com/Biswajit-Rakshit/CineReview-API" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-600 dark:text-indigo-400 hover:underline">
-                            View GitHub Repo <i class="fa-brands fa-github text-sm"></i>
+                        <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-900/10 dark:bg-white/10 text-slate-900 dark:text-white flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">GitHub</span>
+                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">Biswajit-Rakshit</span>
+                            </div>
                         </a>
                     </div>
                 </div>
-
-                <!-- Right Side Interactive Sandbox (7 Cols) -->
-                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col overflow-hidden text-slate-300 shadow-2xl relative">
-                    <!-- Console Header bar -->
-                    <div class="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800/80">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
-                            <span class="text-xs text-slate-400 font-mono ml-3 font-semibold">CineReview-sandbox_v1.0.py</span>
-                        </div>
-                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded font-mono">DRF Engine</span>
-                    </div>
-
-                    <!-- Controls Dashboard -->
-                    <div class="bg-slate-950/50 p-4 border-b border-slate-800 flex flex-wrap gap-2 items-center text-xs justify-between">
-                        <!-- Simulated Auth State -->
-                        <div class="flex items-center gap-2">
-                            <span class="text-slate-400">Auth Token:</span>
-                            <span id="api-jwt-badge" class="px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-mono">AnonymousUser</span>
-                            <button id="api-toggle-auth-btn" class="ml-2 px-2.5 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition active:scale-95">
-                                Log In (JWT)
-                            </button>
-                        </div>
-
-                        <!-- Current user label -->
-                        <div class="text-slate-400 font-mono">
-                            Logged User: <span id="current-username" class="text-white font-bold">None</span>
-                        </div>
-                    </div>
-
-                    <!-- Endpoint buttons row -->
-                    <div class="bg-slate-950/30 p-3 border-b border-slate-800/60 flex flex-wrap gap-2">
-                        <button onclick="runSandboxRequest('GET_MOVIES')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
-                            <span class="text-emerald-400 font-bold">GET</span> /api/movies/
-                        </button>
-                        <button onclick="runSandboxRequest('GET_REVIEWS')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
-                            <span class="text-emerald-400 font-bold">GET</span> /api/movies/1/reviews/
-                        </button>
-                        <button onclick="openSandboxPostModal()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
-                            <span class="text-yellow-400 font-bold">POST</span> /api/reviews/1/create/
-                        </button>
-                        <button onclick="runSandboxRequest('PUT_OTHER_REVIEW')" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 font-mono text-xs flex items-center gap-1">
-                            <span class="text-blue-400 font-bold">PUT</span> /api/review/other-user-99/
-                        </button>
-                    </div>
-
-                    <!-- Output Console Body -->
-                    <div class="flex-1 p-4 font-mono text-xs overflow-y-auto max-h-[300px] min-h-[220px] space-y-3 bg-slate-900/90 text-slate-300">
-                        <p class="text-slate-500">// System Response log loaded. Feel free to execute interactive mock commands above.</p>
-                        <div id="sandbox-console-log" class="space-y-4">
-                            <!-- Injected requests will appear here -->
-                        </div>
-                    </div>
-
-                    <!-- Interactive Post Dialog inside API Explorer (Hidden by default) -->
-                    <div id="sandbox-post-dialog" class="hidden absolute inset-0 bg-slate-950/95 flex flex-col items-center justify-center p-6 z-25">
-                        <div class="w-full max-w-sm bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-4">
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-xs text-yellow-400">POST /api/movies/1/reviews/</span>
-                                <button onclick="closeSandboxPostModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
-                            </div>
-                            <div>
-                                <label class="block text-slate-400 text-[10px] uppercase font-bold mb-1">Select Rating (1-5 Stars)</label>
-                                <select id="sandbox-post-rating" class="w-full bg-slate-800 text-white rounded p-1.5 text-xs focus:ring-1 focus:ring-indigo-500">
-                                    <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-                                    <option value="4">⭐⭐⭐⭐ (4/5)</option>
-                                    <option value="3">⭐⭐⭐ (3/5)</option>
-                                    <option value="2">⭐⭐ (2/5)</option>
-                                    <option value="1">⭐ (1/5)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-slate-400 text-[10px] uppercase font-bold mb-1">Critique Comment</label>
-                                <textarea id="sandbox-post-comment" class="w-full bg-slate-800 text-white rounded p-1.5 text-xs h-16 resize-none focus:ring-1 focus:ring-indigo-500" placeholder="Excellent cinematography and pacing!"></textarea>
-                            </div>
-                            <button onclick="submitSandboxPostReview()" class="w-full py-2 bg-brand-600 hover:bg-brand-500 text-white rounded text-xs font-bold transition">
-                                Dispatch Authorized Request
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+
         </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-y border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Qualifications</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Professional Certifications</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
+    </div>
 
-            <!-- Certs Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Cert 1 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3.5">
-                            <span class="w-12 h-12 bg-yellow-500/10 text-yellow-500 rounded-xl flex items-center justify-center text-2xl font-bold">
-                                <i class="fa-brands fa-python"></i>
-                            </span>
-                            <div>
-                                <h4 class="text-lg font-bold">Python Django – The Practical Guide</h4>
-                                <p class="text-xs text-slate-400 font-semibold uppercase">Udemy Credential</p>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                            Acquired hands-on experience architectural design strategies in standard Django applications. Gained depth in Model-View-Controller patterns, Django Object Relational Mapping (ORM), database transaction layers, custom forms, and template routing models.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                        <span class="font-medium text-slate-400">Skills: Django ORM, REST, MVC</span>
-                        <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono text-[10px] text-slate-500">Udemy Academy</span>
-                    </div>
-                </div>
-
-                <!-- Cert 2 -->
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3.5">
-                            <span class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center text-2xl font-bold">
-                                <i class="fa-brands fa-google"></i>
-                            </span>
-                            <div>
-                                <h4 class="text-lg font-bold">Create Media Search & Recommendation with AI</h4>
-                                <p class="text-xs text-slate-400 font-semibold uppercase">Google Cloud Platform</p>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                            Practical experience constructing state-of-the-art media lookup platforms. Leveraged pre-built AI pipelines, contextual semantic text embeddings, vector matching tools, and recommendation modules on Google Cloud systems.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                        <span class="font-medium text-slate-400">Skills: AI, GCP Cloud APIs, Search</span>
-                        <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 font-mono text-[10px] text-slate-500">Google Cloud</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">My Background</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Academic Journey</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
-
-            <!-- Single large educational card -->
-            <div class="bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col md:flex-row items-start justify-between gap-6 relative overflow-hidden group">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 dark:bg-indigo-500/5 rounded-full blur-2xl pointer-events-none transition group-hover:bg-indigo-500/10"></div>
-                
-                <div class="space-y-4 max-w-xl">
-                    <span class="inline-block bg-brand-500/10 text-brand-600 dark:text-brand-300 font-bold px-3 py-1 text-xs rounded-md">BCA GRADUATE</span>
-                    <h4 class="text-2xl font-bold text-slate-900 dark:text-white">Bachelor of Computer Application</h4>
-                    
-                    <p class="text-slate-700 dark:text-slate-300 font-medium">Techno India Hooghly Campus</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                        Acquired comprehensive knowledge in computational design, software frameworks, network dynamics, systems architecture, structures, and relational DBMS query logic.
-                    </p>
-
-                    <div class="flex items-center gap-2 text-xs text-slate-400">
-                        <i class="fa-solid fa-location-dot text-brand-accent"></i>
-                        <span>Hooghly, West Bengal, India</span>
-                    </div>
-                </div>
-
-                <div class="flex-shrink-0 flex items-center gap-1.5 bg-slate-100 dark:bg-slate-850 px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-bold border border-slate-200/40 dark:border-slate-800 text-sm">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>2021 - 2024</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Hub Section -->
-    <section id="contact" class="py-20 bg-slate-100/40 dark:bg-slate-950/20 border-t border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest font-bold text-brand-600 dark:text-brand-400 mb-2">Say Hello</h2>
-                <h3 class="text-3xl font-extrabold sm:text-4xl text-slate-900 dark:text-white">Contact Connection Hub</h3>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-                <!-- Left Details Info (5 Cols) -->
-                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <h4 class="text-2xl font-bold text-slate-900 dark:text-white">Let's build something exceptional!</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                            Whether you are looking to hire a backend python developer, discuss automation scripts, build standard REST framework layers, or just check general systems architecture strategies, feel free to dispatch a note!
-                        </p>
-
-                        <!-- Static direct coordinates -->
-                        <div class="space-y-4">
-                            <!-- Mobile -->
-                            <a href="tel:+917595858430" class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:-translate-y-0.5 transition hover:shadow-sm">
-                                <span class="w-10 h-10 bg-indigo-50 dark:bg-indigo-950 text-brand-600 dark:text-brand-300 rounded-lg flex items-center justify-center text-sm"><i class="fa-solid fa-phone"></i></span>
-                                <div>
-                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400">Call / WhatsApp</span>
-                                    <span class="text-sm font-semibold">+91 7595858430</span>
-                                </div>
-                            </a>
-
-                            <!-- Mail -->
-                            <a href="mailto:biswajitrakshit2003@gmail.com" class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:-translate-y-0.5 transition hover:shadow-sm">
-                                <span class="w-10 h-10 bg-indigo-50 dark:bg-indigo-950 text-brand-600 dark:text-brand-300 rounded-lg flex items-center justify-center text-sm"><i class="fa-solid fa-envelope"></i></span>
-                                <div>
-                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400">Direct Email</span>
-                                    <span class="text-sm font-semibold truncate">biswajitrakshit2003@gmail.com</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Direct Social Badge Cards -->
-                    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex gap-4">
-                        <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="flex-1 py-3 text-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 hover:text-brand-500 transition font-semibold text-xs flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-github text-base"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="flex-1 py-3 text-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 hover:text-indigo-500 transition font-semibold text-xs flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right dynamic composer form (7 Cols) -->
-                <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
-                                <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
-                            </div>
-                            <div>
-                                <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
-                                <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="contact-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Subject</label>
-                            <input type="text" id="contact-subject" required placeholder="Project Collaboration Pitch" class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 transition">
-                        </div>
-
-                        <div>
-                            <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Message</label>
-                            <textarea id="contact-message" required rows="4" placeholder="Hello Biswajit, I visited your CineReview API Sandbox..." class="w-full px-4 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-850 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100 placeholder-slate-400 resize-none transition"></textarea>
-                        </div>
-
-                        <!-- Feedback Message Banner -->
-                        <div id="contact-form-feedback" class="hidden p-3.5 rounded-lg text-xs font-medium text-center"></div>
-
-                        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white rounded-xl text-sm font-bold shadow-lg transition duration-200">
-                            Generate Email Draft <i class="fa-solid fa-paper-plane ml-1.5"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-xs text-center transition-colors">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <p class="text-sm font-bold text-slate-100">Biswajit Rakshit</p>
-            <p class="max-w-md mx-auto leading-relaxed text-slate-500">
-                Sleek backend developer specializing in standard MVC architecture models, cloud deployment layers, and systematic production analyses.
-            </p>
-            <div class="flex justify-center space-x-6 text-slate-500">
-                <a href="https://github.com/Biswajit-Rakshit" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github text-lg"></i></a>
-                <a href="https://www.linkedin.com/in/Biswajit--Rakshit" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                <a href="mailto:biswajitrakshit2003@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-lg"></i></a>
-                <a href="tel:+917595858430" class="hover:text-white transition"><i class="fa-solid fa-phone text-lg"></i></a>
-            </div>
-            <div class="pt-6 border-t border-slate-800/80 text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span>&copy; <span id="current-year"></span> Biswajit Rakshit. All rights reserved.</span>
-                <span class="flex items-center gap-1.5 text-slate-500 hover:text-slate-400 transition-colors">
-                    <i class="fa-solid fa-wand-magic-sparkles text-brand-500 animate-pulse"></i> Crafted with Gemini & Tailwind
-                </span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts Area -->
-    <script>
-        // Setup Current Year in Footer
-        document.getElementById('current-year').innerText = new Date().getFullYear();
-
-        // Theme Toggle Functionality
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-        function updateThemeUI() {
-            if (document.documentElement.classList.contains('dark')) {
-                themeToggleLightIcon.classList.remove('hidden');
-                themeToggleDarkIcon.classList.add('hidden');
-            } else {
-                themeToggleDarkIcon.classList.remove('hidden');
-                themeToggleLightIcon.classList.add('hidden');
-            }
-        }
-
-        // Initialize theme based on preference or previous state
-        if (localStorage.getItem('color-theme') === 'light' || 
-            (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.remove('dark');
-        } else {
-            document.documentElement.classList.add('dark');
-        }
-        updateThemeUI();
-
-        themeToggleBtn.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-            updateThemeUI();
-        });
-
-        // Responsive Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIconBars = document.getElementById('menu-icon-bars');
-        const menuIconClose = document.getElementById('menu-icon-close');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIconBars.classList.toggle('hidden');
-            menuIconClose.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when nav link is clicked
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIconBars.classList.remove('hidden');
-                menuIconClose.classList.add('hidden');
-            });
-        });
-
-        // Dynamic Hero Header Typing Effect
-        const words = [
-            "Associate Analyst @ Deloitte USI",
-            "Python Backend Engineer",
-            "Django API Specialist",
-            "BCA Graduate & Dev Analyst"
-        ];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseTime = 1500;
-        const typingTextElem = document.getElementById('typing-text');
-
-        function type() {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                typingTextElem.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingTextElem.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(type, pauseTime);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 300);
-            } else {
-                setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-            }
-        }
+    <!-- STICKY iOS BOTTOM TAB BAR: Visible only on Mobile (max-width md) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/80 dark:bg-[#1C1C1E]/80 backdrop-blur-lg border-t border-black/5 dark:border-white/5 z-50 flex items-center overflow-x-auto no-scrollbar px-4 gap-6 select-none shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         
-        // Start typing effect on load
-        type();
+        <button onclick="switchView('profile-app')" id="tab-profile-app" class="tab-btn-active shrink-0 flex flex-col items-center justify-center gap-1 text-iosBlue w-12 transition active:scale-90">
+            <i class="fa-solid fa-user-astronaut text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Profile</span>
+        </button>
 
-        // Skills Search & Filter system
-        const skillSearchInput = document.getElementById('skill-search');
-        const skillCards = document.querySelectorAll('.skill-card');
-        const skillCategoryButtons = document.querySelectorAll('.skill-category-btn');
-        let currentActiveCategory = 'all';
+        <button onclick="switchView('experience-app')" id="tab-experience-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-briefcase text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Experience</span>
+        </button>
 
-        function filterSkills() {
-            const searchQuery = skillSearchInput.value.toLowerCase().trim();
-            skillCards.forEach(card => {
-                const skillCategory = card.getAttribute('data-category');
-                const skillName = card.getAttribute('data-skill-name').toLowerCase();
-                
-                const matchesCategory = currentActiveCategory === 'all' || skillCategory === currentActiveCategory;
-                const matchesSearch = skillName.includes(searchQuery);
+        <button onclick="switchView('projects-app')" id="tab-projects-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-layer-group text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Projects</span>
+        </button>
 
-                if (matchesCategory && matchesSearch) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+        <button onclick="switchView('sandbox-app')" id="tab-sandbox-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-terminal text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Sandbox</span>
+        </button>
+
+        <button onclick="switchView('skills-app')" id="tab-skills-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-code text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Skills</span>
+        </button>
+
+        <button onclick="switchView('certs-app')" id="tab-certs-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-award text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Certifications</span>
+        </button>
+
+        <button onclick="switchView('edu-app')" id="tab-edu-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Education</span>
+        </button>
+
+        <button onclick="switchView('contact-app')" id="tab-contact-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-envelope text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Contact</span>
+        </button>
+    </nav>
+
+    <!-- Universal iOS Toast Overlay -->
+    <div id="system-toast" class="fixed top-14 right-4 z-[99] glass-ios p-4 rounded-2xl max-w-sm border border-iosBlue/30 flex gap-3 shadow-2xl transition-all duration-300 transform translate-x-96 opacity-0 select-none">
+        <div class="p-2 rounded-xl bg-iosBlue text-white shrink-0 h-fit" id="toast-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold text-slate-800 dark:text-zinc-100" id="toast-title">System Alert</h4>
+            <p class="text-[10px] text-slate-500 dark:text-zinc-400 mt-1 leading-relaxed" id="toast-message">Notification details logged in backend console state.</p>
+        </div>
+    </div>
+
+    <!-- Minimal attribution block -->
+    <div class="text-center pt-8 pb-24 md:pb-8 text-[11px] text-slate-400 dark:text-zinc-600 select-none relative z-10">
+        <p>© 2026 Biswajit Rakshit. All rights reserved.</p>
+        <p class="font-mono">Engineered & Curated by Gemini</p>
+    </div>
+
+    <!-- Logic JS Module -->
+    <script>
+        // System variables & dynamic initialization
+        let isAuthenticated = false;
+        let isThrottled = false;
+        let throttleClickCount = 0;
+
+        // Custom logging template helper
+        function formatJSON(obj) {
+            return JSON.stringify(obj, null, 2);
         }
 
-        skillSearchInput.addEventListener('input', filterSkills);
+        // Live Clock
+        function updateClock() {
+            const timeEl = document.getElementById('statusBar-time');
+            if (timeEl) {
+                const now = new Date();
+                const options = { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
+                timeEl.textContent = now.toLocaleDateString('en-US', options).replace(/,/g, '');
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
 
-        skillCategoryButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active buttons styles
-                skillCategoryButtons.forEach(b => {
-                    b.classList.remove('bg-brand-600', 'text-white');
-                    b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-400');
-                });
-                btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-400');
-                btn.classList.add('bg-brand-600', 'text-white');
-
-                currentActiveCategory = btn.getAttribute('data-category');
-                filterSkills();
-            });
-        });
-
-        // CineReview REST API Simulator Engine
-        let isAuthorizedJWT = false;
-        let mockUserReviews = [];
-
-        function updateSandboxAuthUI() {
-            const badge = document.getElementById('api-jwt-badge');
-            const btn = document.getElementById('api-toggle-auth-btn');
-            const nameBadge = document.getElementById('current-username');
-
-            if (isAuthorizedJWT) {
-                badge.textContent = "JWT: Valid Token (Bearer eyJhbGci...)";
-                badge.className = "px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono";
-                btn.textContent = "Log Out (Clear Token)";
-                btn.className = "ml-2 px-2.5 py-1 bg-red-600 hover:bg-red-500 text-white rounded font-medium transition active:scale-95";
-                nameBadge.textContent = "Verified_Critic_Biswajit";
-                nameBadge.className = "text-emerald-400 font-bold";
+        // Theme Switcher Controller
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                showToast("System Theme", "Switched to Light mode layout.", "theme");
             } else {
-                badge.textContent = "AnonymousUser";
-                badge.className = "px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-mono";
-                btn.textContent = "Log In (JWT)";
-                btn.className = "ml-2 px-2.5 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition active:scale-95";
-                nameBadge.textContent = "None";
-                nameBadge.className = "text-slate-500";
+                html.classList.add('dark');
+                showToast("System Theme", "Switched to Dark mode layout.", "theme");
             }
         }
 
-        document.getElementById('api-toggle-auth-btn').addEventListener('click', () => {
-            isAuthorizedJWT = !isAuthorizedJWT;
-            updateSandboxAuthUI();
-            logConsoleAction(
-                "SYSTEM", 
-                isAuthorizedJWT ? "JWT Token Generated. Bearer Session set in Authorization Headers." : "JWT Token cleared from storage. Request Authorization headers removed."
-            );
-        });
+        // Display beautiful Toast alerts matching native iOS Push Notifications
+        function showToast(title, message, type = "info") {
+            const toast = document.getElementById('system-toast');
+            const tTitle = document.getElementById('toast-title');
+            const tMsg = document.getElementById('toast-message');
+            const tIcon = document.getElementById('toast-icon');
 
-        function logConsoleAction(method, detail, responseJson = null) {
-            const consoleBox = document.getElementById('sandbox-console-log');
-            const entry = document.createElement('div');
-            entry.className = "space-y-1.5 border-l border-slate-700/60 pl-3 py-1";
+            tTitle.textContent = title;
+            tMsg.textContent = message;
 
-            const timestamp = new Date().toLocaleTimeString();
-            let methodColor = "text-blue-400";
-            if (method === "GET") methodColor = "text-emerald-400";
-            if (method === "POST") methodColor = "text-yellow-400";
-            if (method === "SYSTEM") methodColor = "text-indigo-400";
-
-            let headerHTML = `<div class="flex items-center justify-between text-[11px]"><span class="font-bold ${methodColor}">[${method}] ${detail}</span><span class="text-slate-500 font-semibold">${timestamp}</span></div>`;
-            let responseHTML = "";
-
-            if (responseJson) {
-                responseHTML = `<pre class="bg-slate-950 p-2.5 rounded text-slate-400 text-[10px] overflow-x-auto border border-slate-800">${JSON.stringify(responseJson, null, 2)}</pre>`;
+            // Colors based on events
+            if (type === "auth") {
+                tIcon.className = "p-2 rounded-xl bg-iosGreen text-white shrink-0 h-fit";
+                tIcon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`;
+            } else if (type === "throttle" || type === "offline") {
+                tIcon.className = "p-2 rounded-xl bg-amber-500 text-white shrink-0 h-fit";
+                tIcon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`;
+            } else {
+                tIcon.className = "p-2 rounded-xl bg-iosBlue text-white shrink-0 h-fit";
+                tIcon.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
             }
 
-            entry.innerHTML = headerHTML + responseHTML;
-            consoleBox.appendChild(entry);
-            consoleBox.scrollTop = consoleBox.scrollHeight;
+            toast.classList.remove('translate-x-96', 'opacity-0');
+            toast.classList.add('translate-x-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-x-0', 'opacity-100');
+                toast.classList.add('translate-x-96', 'opacity-0');
+            }, 4000);
         }
 
-        function runSandboxRequest(type) {
-            if (type === 'GET_MOVIES') {
-                const mockMovies = [
-                    { id: 1, title: "Inception", platform: "Netflix", reviews_count: 12 },
-                    { id: 2, title: "Interstellar", platform: "Prime Video", reviews_count: 8 },
-                    { id: 3, title: "The Dark Knight", platform: "HBO Max", reviews_count: 24 }
-                ];
-                logConsoleAction("GET", "Requested resource: /api/movies/", mockMovies);
-            }
+        // AegisMind: Obtain JWT Mock
+        function simulateJWTAuth() {
+            isAuthenticated = true;
+            
+            const badge = document.getElementById('auth-badge');
+            badge.textContent = "AUTHENTICATED";
+            badge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400";
 
-            if (type === 'GET_REVIEWS') {
-                const mockReviews = [
-                    { id: 101, movie_id: 1, user: "movie_buff_99", stars: 5, comment: "Incredibly layered plot structures!", self_owned: false },
-                    { id: 102, movie_id: 1, user: "cinema_expert", stars: 4, comment: "Nolan rules. Period.", self_owned: false }
-                ];
-                // Append current user reviews if any
-                const combined = [...mockReviews, ...mockUserReviews];
-                logConsoleAction("GET", "Requested resource: /api/movies/1/reviews/", combined);
-            }
+            document.getElementById('api-status-pill').textContent = "200 OK";
+            document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-500";
 
-            if (type === 'PUT_OTHER_REVIEW') {
-                // Simulating DRF Object-Level permissions check
-                if (!isAuthorizedJWT) {
-                    logConsoleAction("PUT", "Denied modification: /api/review/other-user-99/", {
-                        detail: "Authentication credentials were not provided.",
-                        status_code: 401
-                    });
-                } else {
-                    logConsoleAction("PUT", "Denied modification: /api/review/other-user-99/", {
-                        detail: "You do not have permission to edit this review. Object ownership required.",
-                        status_code: 403,
-                        drf_permission_class: "IsReviewUserOrReadOnly"
-                    });
+            const output = {
+                "HTTP/1.1": "200 OK",
+                "Content-Type": "application/json",
+                "payload": {
+                    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMzQ1LCJleHAiOjE3MTk1Mjg4MDAsImlzX3N0YWZmIjp0cnVlfQ...",
+                    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMzQ1LCJleHAiOjE3MTk1MjIwMDAsImlzX3N0YWZmIjp0cnVlLCJyb2xlIjoiRU1QTE9ZRUUifQ...",
+                    "user": {
+                        "username": "biswajit_admin",
+                        "email": "biswa.rakshit@outlook.com",
+                        "permissions": [
+                            "can_submit_weekly_sentiment",
+                            "view_anonymized_department_analytics"
+                        ]
+                    },
+                    "system_message": "JWT Token generated successfully. Bearer authorization available."
                 }
-            }
+            };
+            document.getElementById('terminal-json').className = "text-emerald-400";
+            document.getElementById('terminal-json').textContent = formatJSON(output);
+            showToast("JWT Auth Success", "Received mock token keys securely.", "auth");
         }
 
-        function openSandboxPostModal() {
-            if (!isAuthorizedJWT) {
-                logConsoleAction("POST", "Denied creation on /api/movies/1/reviews/", {
-                    detail: "Authentication credentials were not provided. JWT validation token required.",
-                    status_code: 401
-                });
+        // AegisMind: Submit Survey (DRF throttling test)
+        function simulateSubmitSurvey() {
+            if (!isAuthenticated) {
+                document.getElementById('api-status-pill').textContent = "401 UNAUTHORIZED";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-500";
+                
+                const err = {
+                    "HTTP/1.1": "401 Unauthorized",
+                    "detail": "Authentication credentials were not provided in headers.",
+                    "required_header": "Authorization: Bearer <your_token>"
+                };
+                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').textContent = formatJSON(err);
+                showToast("Authentication Error", "Please acquire JWT credentials first.", "offline");
                 return;
             }
-            document.getElementById('sandbox-post-dialog').classList.remove('hidden');
+
+            throttleClickCount++;
+            const counter = document.getElementById('throttle-counter');
+            
+            if (throttleClickCount === 1) {
+                counter.textContent = "Attempt: 1/1";
+                document.getElementById('api-status-pill').textContent = "201 CREATED";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-500";
+                
+                const res = {
+                    "HTTP/1.1": "201 Created",
+                    "response": {
+                        "id": 1045,
+                        "uuid": "fca84d28-0a0e-43d9-959c-0c151fe5323a",
+                        "status": "Accepted",
+                        "data_integrity": "k-Anonymity Queued",
+                        "client_ip_hashed": "82e7bc44... (masked)",
+                        "submission_timestamp": "2026-06-27T21:07:00Z"
+                    },
+                    "message": "Survey recorded successfully. Rate-limiter token spent for current week."
+                };
+                document.getElementById('terminal-json').className = "text-emerald-400";
+                document.getElementById('terminal-json').textContent = formatJSON(res);
+                showToast("Survey Submitted", "Response securely processed with active anonymity filter.", "auth");
+            } else {
+                // Throttling active
+                counter.textContent = "Attempt: Throttled ❌";
+                document.getElementById('api-status-pill').textContent = "429 TOO MANY REQUESTS";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-500";
+                
+                const err = {
+                    "HTTP/1.1": "429 Too Many Requests",
+                    "detail": "Request throttled. Expected available in 6 days 23 hours.",
+                    "custom_throttling_class": "EmployeeSubmissionOncePerWeekThrottle",
+                    "rate_limit_rule": "Limit: 1 submission per week per authenticated employee account.",
+                    "context": "Privacy enforcement prevents repeated submissions, reducing target tracing risk."
+                };
+                document.getElementById('terminal-json').className = "text-amber-400";
+                document.getElementById('terminal-json').textContent = formatJSON(err);
+                showToast("Custom Rate Limited", "Request blocked by Django custom Throttle rule.", "throttle");
+            }
         }
 
-        function closeSandboxPostModal() {
-            document.getElementById('sandbox-post-dialog').classList.add('hidden');
+        // AegisMind: k-Anonymity Protection Checks
+        function simulateAnalytics(dept) {
+            if (!isAuthenticated) {
+                document.getElementById('api-status-pill').textContent = "401 UNAUTHORIZED";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-500";
+                
+                const err = {
+                    "HTTP/1.1": "401 Unauthorized",
+                    "detail": "Authentication credentials not validated."
+                };
+                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').textContent = formatJSON(err);
+                showToast("Access Denied", "Please authenticate via JWT step first.", "offline");
+                return;
+            }
+
+            if (dept === "Engineering") {
+                document.getElementById('api-status-pill').textContent = "200 OK";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-500";
+                
+                const res = {
+                    "HTTP/1.1": "200 OK",
+                    "cohort_metrics": {
+                        "department": "Engineering",
+                        "cohort_size_k": 6,
+                        "privacy_compliance": "PASSED (k >= 5 limits met)",
+                        "aggregate_burnout_index": "2.4 / 10",
+                        "workload_strain_average": "4.2 / 10",
+                        "submission_range": "Current Calendar Week"
+                    }
+                };
+                document.getElementById('terminal-json').className = "text-emerald-400";
+                document.getElementById('terminal-json').textContent = formatJSON(res);
+                showToast("Access Granted", "Data meets safe k-Anonymity metrics.", "auth");
+            } else {
+                // Marketing under 5 inputs (k=3)
+                document.getElementById('api-status-pill').textContent = "403 FORBIDDEN";
+                document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-500";
+                
+                const err = {
+                    "HTTP/1.1": "403 Forbidden",
+                    "cohort_metrics": {
+                        "department": "Marketing",
+                        "cohort_size_k": 3,
+                        "privacy_compliance": "FAILED (k-Anonymity constraint set at k >= 5 targets)",
+                    },
+                    "exception": "PrivacyProtectionGuardError",
+                    "detail": "Analytics access is restricted for groups containing less than 5 employees to prevent response trace & profile matching."
+                };
+                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').textContent = formatJSON(err);
+                showToast("Blocked by Privacy Shield", "k-Anonymity threshold not met to protect employee identity.", "throttle");
+            }
         }
 
-        function submitSandboxPostReview() {
-            const ratingVal = document.getElementById('sandbox-post-rating').value;
-            const commentText = document.getElementById('sandbox-post-comment').value || "No comments given.";
+        // Reset sandbox to clean state
+        function resetPlayground() {
+            isAuthenticated = false;
+            isThrottled = false;
+            throttleClickCount = 0;
 
-            const newReview = {
-                id: Math.floor(Math.random() * 1000) + 200,
-                movie_id: 1,
-                user: "Verified_Critic_Biswajit",
-                stars: parseInt(ratingVal),
-                comment: commentText,
-                self_owned: true
+            const badge = document.getElementById('auth-badge');
+            badge.textContent = "UNAUTHENTICATED";
+            badge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-600 dark:text-red-400";
+
+            document.getElementById('throttle-counter').textContent = "Attempt: 0/1";
+
+            document.getElementById('api-status-pill').textContent = "IDLE";
+            document.getElementById('api-status-pill').className = "text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400";
+
+            const output = {
+                "sandbox_status": "Ready",
+                "instructions": "Console state has been successfully garbage-collected and reset."
             };
+            document.getElementById('terminal-json').className = "text-emerald-400";
+            document.getElementById('terminal-json').textContent = formatJSON(output);
+            showToast("Workspace Reset", "Simulator states reverted to default.", "info");
+        }
 
-            mockUserReviews.push(newReview);
-            closeSandboxPostModal();
+        // Real-Time Skill Filter Registry
+        function filterSkills(query) {
+            const cleanQuery = query.toLowerCase().trim();
+            const tags = document.querySelectorAll('.skill-tag');
+            const categories = document.querySelectorAll('.skill-category-container');
 
-            logConsoleAction("POST", "Authorized submission successful: /api/movies/1/reviews/", {
-                status: "Created",
-                status_code: 201,
-                payload: newReview
+            tags.forEach(tag => {
+                const txt = tag.textContent.toLowerCase();
+                if (txt.includes(cleanQuery)) {
+                    tag.classList.remove('opacity-30');
+                    tag.classList.add('scale-100');
+                } else {
+                    tag.classList.add('opacity-30');
+                    tag.classList.remove('scale-100');
+                }
+            });
+        }
+
+        // Simulate Action Mail dispatch
+        function handleMailSubmit(e) {
+            e.preventDefault();
+            const sName = document.getElementById('sender-name').value;
+            const sSub = document.getElementById('mail-subject').value;
+            const sBody = document.getElementById('mail-body').value;
+
+            const mailtoLink = `mailto:biswa.rakshit@outlook.com?subject=${encodeURIComponent(sSub)}&body=${encodeURIComponent("From: " + sName + "\n\n" + sBody)}`;
+            
+            showToast("Dispatch Success", "Launching email system wrapper payload...", "auth");
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+            }, 1000);
+        }
+
+        // iOS Single Page View Switcher Controller
+        function switchView(targetAppId) {
+            // Hide all app-views
+            const views = document.querySelectorAll('.app-view');
+            views.forEach(view => {
+                view.classList.add('hidden');
+                view.style.opacity = "0";
+                view.style.transform = "scale(0.95)";
             });
 
-            // Clear input
-            document.getElementById('sandbox-post-comment').value = "";
-        }
+            // Show active app-view
+            const targetView = document.getElementById(targetAppId);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                // Little delay to allow scale and fade in transitions
+                setTimeout(() => {
+                    targetView.style.opacity = "1";
+                    targetView.style.transform = "scale(1)";
+                }, 10);
+            }
 
-        // Contact Form Processing Function
-        function handleFormSubmit(event) {
-            event.preventDefault();
+            // Update Desktop Sidebar active styling state
+            const sidebarBtns = document.querySelectorAll('aside nav text-slate-500, aside nav button');
+            sidebarBtns.forEach(btn => {
+                btn.className = "w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left";
+            });
+            const activeSidebarBtn = document.getElementById(`sidebar-${targetAppId}`);
+            if (activeSidebarBtn) {
+                activeSidebarBtn.className = "w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-900 dark:text-white bg-white/60 dark:bg-white/10 transition active:scale-95 text-left border border-black/5 dark:border-white/5";
+            }
 
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const subject = document.getElementById('contact-subject').value;
-            const msg = document.getElementById('contact-message').value;
-
-            const feedback = document.getElementById('contact-form-feedback');
-
-            feedback.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'bg-red-500/10', 'text-red-400');
-
-            try {
-                // Draft email via client mailto
-                const recipient = "biswajitrakshit2003@gmail.com";
-                const mailBody = `Hi Biswajit,\n\nMy name is ${name} (${email}).\n\n${msg}\n\nBest regards,\n${name}`;
+            // Update Mobile Bottom Tab active styling state
+            const tabBtns = document.querySelectorAll('nav[class*="md:hidden"] button');
+            tabBtns.forEach(btn => {
+                btn.className = "shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90";
+            });
+            const activeTabBtn = document.getElementById(`tab-${targetAppId}`);
+            if (activeTabBtn) {
+                activeTabBtn.className = "shrink-0 flex flex-col items-center justify-center gap-1 text-iosBlue w-12 transition active:scale-90";
                 
-                const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
-
-                // Open composer
-                window.location.href = mailtoUrl;
-
-                feedback.classList.add('bg-emerald-500/10', 'text-emerald-400');
-                feedback.textContent = "Draft generated! Opening your local email client composer...";
-
-                // Reset form
-                document.getElementById('contact-form').reset();
-            } catch (err) {
-                feedback.classList.add('bg-red-500/10', 'text-red-400');
-                feedback.textContent = "Oops! Unable to initiate client composer automatically.";
+                // Ensure active tab scrolls into view seamlessly
+                activeTabBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
         }
     </script>
