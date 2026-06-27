@@ -129,10 +129,10 @@
     </div>
 
     <!-- iOS Native App Style Status Bar (Header) -->
-    <header class="fixed top-0 left-0 right-0 h-12 bg-white/45 dark:bg-[#1C1C1E]/50 backdrop-blur-lg border-b border-black/5 dark:border-white/5 z-50 flex items-center justify-between px-6 select-none">
+    <header class="fixed top-0 left-0 right-0 h-12 bg-white/45 dark:bg-[#1C1C1E]/50 backdrop-blur-lg border-b border-black/5 dark:border-white/5 z-50 flex items-center justify-between px-6 select-none font-sans">
         <!-- System Time -->
         <div class="flex items-center gap-1 text-slate-900 dark:text-white">
-            <span id="statusBar-time" class="text-xs font-semibold tracking-tight font-mono">Sat Jun 27 09:41 PM</span>
+            <span id="statusBar-time" class="text-xs font-semibold tracking-tight font-sans">Sat Jun 27 09:41 PM</span>
         </div>
         
         <!-- Status Symbols & Controls -->
@@ -145,7 +145,7 @@
     </header>
 
     <!-- iPadOS Style Sidebar + Viewport Container -->
-    <div class="max-w-7xl mx-auto w-full flex-grow pt-16 px-4 md:px-8 z-10 flex flex-col md:flex-row gap-6 relative">
+    <div class="max-w-7xl mx-auto w-full flex-grow pt-16 px-4 md:px-8 z-10 flex flex-col md:flex-row gap-6 relative font-sans">
         
         <!-- SIDEBAR MENU: Displayed on Desktop and Tablet (iPadOS Style) -->
         <aside class="hidden md:flex flex-col w-64 shrink-0 h-[calc(100vh-6rem)] sticky top-20 select-none space-y-6">
@@ -157,7 +157,7 @@
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-slate-900 dark:text-white">Biswajit Rakshit</h3>
-                    <p class="text-[10px] font-semibold text-slate-500 dark:text-zinc-500 font-mono tracking-wider">BACKEND ENGINEER</p>
+                    <p class="text-[10px] font-semibold text-slate-500 dark:text-zinc-500 tracking-wider">BACKEND ENGINEER</p>
                 </div>
             </div>
 
@@ -184,6 +184,11 @@
                         <span>Sandbox</span>
                     </button>
 
+                    <button onclick="switchView('notes-app')" id="sidebar-notes-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
+                        <i class="fa-solid fa-book-bookmark text-fuchsia-500 text-sm w-5 text-center"></i>
+                        <span>Tech Notes</span>
+                    </button>
+
                     <button onclick="switchView('skills-app')" id="sidebar-skills-app" class="w-full flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/5 transition active:scale-95 text-left">
                         <i class="fa-solid fa-code text-violet-500 text-sm w-5 text-center"></i>
                         <span>Skills</span>
@@ -207,7 +212,7 @@
 
                 <!-- iPadOS Sidebar Utilities -->
                 <div class="border-t border-black/5 dark:border-white/5 pt-4 mt-3 flex items-center justify-center px-2">
-                    <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest font-bold">v2.0.1</span>
+                    <span class="text-[9px] text-slate-400 uppercase tracking-widest font-bold">v2.1</span>
                 </div>
             </div>
         </aside>
@@ -233,7 +238,7 @@
                         <div>
                             <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-iosBlue/10 text-iosBlue border border-iosBlue/15 uppercase tracking-wide inline-block mb-3">Developer Profile</span>
                             <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Biswajit Rakshit</h1>
-                            <p class="text-sm md:text-base font-semibold text-slate-500 dark:text-zinc-400 font-mono mt-1">Associate Analyst & Backend Engineer</p>
+                            <p class="text-sm md:text-base font-semibold text-slate-500 dark:text-zinc-400 mt-1">Associate Analyst & Backend Engineer</p>
                         </div>
                         
                         <div class="pt-2 pb-6 border-b border-black/5 dark:border-white/5">
@@ -246,7 +251,7 @@
                     <!-- System Info widget -->
                     <div class="mt-6 p-5 rounded-2xl bg-white/45 dark:bg-zinc-900/40 border border-white/20 dark:border-zinc-800 space-y-4 w-full max-w-3xl">
                         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block text-center">DEVICE CAPABILITIES</span>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono text-center">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-center">
                             <div>
                                 <span class="block text-slate-400 mb-1">ENGINE</span>
                                 <span class="font-bold text-slate-900 dark:text-white">Python / DRF</span>
@@ -273,21 +278,21 @@
             <div id="experience-app" class="app-view space-y-6 hidden">
                 <div class="glass-ios squircle-lg p-6 md:p-8">
                     <!-- iOS Header -->
-                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6 font-sans">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-iosGreen text-white flex items-center justify-center shadow-md">
                                 <i class="fa-solid fa-briefcase"></i>
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Professional History</h2>
-                                <p class="text-xs text-slate-500 font-mono">Timeline Overview</p>
+                                <p class="text-xs text-slate-500">Timeline Overview</p>
                             </div>
                         </div>
                         <span class="text-xs font-bold text-iosGreen bg-iosGreen/10 border border-iosGreen/15 px-3 py-1 rounded-full uppercase">Active</span>
                     </div>
 
                     <!-- Deloitte Node -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 font-sans">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-black/5 dark:border-zinc-800">
                             <div class="flex flex-row gap-3">
                                 <img src="images/deloitte-com-logo.png" alt="Deloitte" class="h-10 mt-1 rounded-full" onerror="this.src='https://placehold.co/40x40/000000/34C759?text=D';">
@@ -297,8 +302,8 @@
                                 </div>
                             </div>
                             <div class="text-left sm:text-right">
-                                <span class="text-xs font-bold font-mono text-slate-500 bg-slate-200/50 dark:bg-zinc-800 px-3 py-1 rounded-full">Oct 2024 - Present</span>
-                                <p class="text-[10px] text-slate-400 font-mono mt-1">Bengaluru, India</p>
+                                <span class="text-xs font-bold text-slate-500 bg-slate-200/50 dark:bg-zinc-800 px-3 py-1 rounded-full">Oct 2024 - Present</span>
+                                <p class="text-[10px] text-slate-400 mt-1">Bengaluru, India</p>
                             </div>
                         </div>
 
@@ -338,7 +343,7 @@
 
             <!-- APP 3: Projects Portfolio -->
             <div id="projects-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios squircle-lg p-6 md:p-8">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
                     <!-- Title Header -->
                     <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
                         <div class="flex items-center gap-3">
@@ -347,7 +352,7 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Featured Projects</h2>
-                                <p class="text-xs text-slate-500 font-mono">Open Source Portfolio</p>
+                                <p class="text-xs text-slate-500">Open Source Portfolio</p>
                             </div>
                         </div>
                     </div>
@@ -401,7 +406,7 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">AegisMind Playground</h2>
-                                <p class="text-xs text-slate-500 font-mono">REST API Simulator</p>
+                                <p class="text-xs text-slate-500 font-sans">REST API Simulator</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-2">
@@ -483,7 +488,7 @@
                                 </button>
                             </div>
 
-                            <button onclick="resetPlayground()" class="w-full py-2 rounded-xl border border-red-500/25 text-red-500 text-xs font-bold transition">
+                            <button onclick="resetPlayground()" class="w-full py-2 rounded-xl border border-red-500/25 text-red-500 text-xs font-bold transition font-sans">
                                 Reset Simulator State
                             </button>
                         </div>
@@ -504,9 +509,49 @@
                 </div>
             </div>
 
-            <!-- APP 5: Skills Hub -->
+            <!-- APP 5: Tech Notes (Django REST Guide) -->
+            <div id="notes-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-fuchsia-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Tech Notes</h2>
+                                <p class="text-xs text-slate-500">Engineering Guides & Documentation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes Card -->
+                    <div class="p-5 rounded-2xl bg-white/40 dark:bg-zinc-900/40 border border-black/5 dark:border-zinc-800 hover:bg-white/60 dark:hover:bg-zinc-900/60 transition duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="space-y-3">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">Django REST Framework</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">API Architecture</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-200/50 dark:bg-zinc-800 text-[10px] font-bold text-slate-600 dark:text-zinc-400">Documentation</span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Django REST Framework Guide</h3>
+                                <p class="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
+                                    An essential handbook and guide built to document production API workflows. This interactive documentation covers critical architecture components including complex serializer designs, JWT authentication integration, role-based resource permissions, custom DRF throttling behaviors, and secure PostgreSQL query optimization patterns.
+                                </p>
+                            </div>
+                            <div class="shrink-0 md:w-36">
+                                <a href="https://biswajit-rakshit.github.io/Django-Rest-Framework-Guide/" target="_blank" class="w-full py-2.5 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white text-xs font-bold flex items-center justify-center gap-2 transition shadow-md shadow-fuchsia-500/10">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APP 6: Skills Hub -->
             <div id="skills-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios squircle-lg p-6 md:p-8">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
                     <!-- Title Header -->
                     <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
                         <div class="flex items-center gap-3">
@@ -515,7 +560,7 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Skills</h2>
-                                <p class="text-xs text-slate-500 font-mono">Technical Capability</p>
+                                <p class="text-xs text-slate-500">Technical Capability</p>
                             </div>
                         </div>
                     </div>
@@ -532,7 +577,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Languages -->
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Languages</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Languages</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Python</span>
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">SQL</span>
@@ -542,7 +587,7 @@
 
                         <!-- Frameworks -->
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Web Frameworks & Core APIs</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Web Frameworks & Core APIs</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django</span>
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django REST Framework (DRF)</span>
@@ -555,7 +600,7 @@
 
                         <!-- Data Stores -->
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Databases & Storage</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Databases & Storage</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">PostgreSQL</span>
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">MySQL</span>
@@ -564,7 +609,7 @@
 
                         <!-- Cloud Technology & Testing -->
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Ops & Assurance Suites</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Ops & Assurance Suites</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Amazon Web Services (AWS)</span>
                                 <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Git / GitHub</span>
@@ -578,9 +623,9 @@
                 </div>
             </div>
 
-            <!-- APP 6: Certifications -->
+            <!-- APP 7: Certifications -->
             <div id="certs-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios squircle-lg p-6 md:p-8">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
                     <!-- Title Header -->
                     <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
                         <div class="flex items-center gap-3">
@@ -589,19 +634,19 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Credentials & Certifications</h2>
-                                <p class="text-xs text-slate-500 font-mono">Verified Badges</p>
+                                <p class="text-xs text-slate-500">Verified Badges</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Certificates Grid -->
                     <div class="space-y-4">
-                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Verified Credentials</span>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block">Verified Credentials</span>
                         
                         <!-- Udemy DRF -->
                         <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase font-mono">Udemy Approved</span>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase">Udemy Approved</span>
                                 <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Build REST APIs with Django REST Framework and Python</h4>
                                 <p class="text-xs text-slate-500 dark:text-zinc-400">Professional specialization focusing on deep serializations, custom DRF throttle controllers, and object permissions.</p>
                             </div>
@@ -610,7 +655,7 @@
                         <!-- Udemy Django -->
                         <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase font-mono">Udemy Approved</span>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase">Udemy Approved</span>
                                 <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Python Django: The Practical Guide</h4>
                                 <p class="text-xs text-slate-500 dark:text-zinc-400">Hands-on course focusing on ORM relationship mapping, custom migrations, database templates, and state parameters.</p>
                             </div>
@@ -619,7 +664,7 @@
                         <!-- HackerRank -->
                         <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/15 uppercase font-mono">HackerRank Verified</span>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/15 uppercase font-sans">HackerRank Verified</span>
                                 <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">SQL - Intermediate</h4>
                                 <p class="text-xs text-slate-500 dark:text-zinc-400">Evaluates nested queries, SQL database relationship constraints, and complex execution logic.</p>
                             </div>
@@ -628,9 +673,9 @@
                 </div>
             </div>
 
-            <!-- APP 7: Education -->
+            <!-- APP 8: Education -->
             <div id="edu-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios squircle-lg p-6 md:p-8">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
                     <!-- Title Header -->
                     <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
                         <div class="flex items-center gap-3">
@@ -639,7 +684,7 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Academic Record</h2>
-                                <p class="text-xs text-slate-500 font-mono">Higher Education</p>
+                                <p class="text-xs text-slate-500">Higher Education</p>
                             </div>
                         </div>
                     </div>
@@ -648,19 +693,19 @@
                     <div class="space-y-4">
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
                             <div class="space-y-1.5">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-mono">Degree</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Degree</span>
                                 <h4 class="text-lg font-extrabold text-slate-900 dark:text-white">Bachelor of Computer Application (BCA)</h4>
                                 <p class="text-sm text-slate-600 dark:text-zinc-400">Techno India Hooghly Campus <span class="hidden sm:inline">|</span><span class="sm:hidden block mt-0.5"></span> West Bengal, India</p>
                             </div>
-                            <span class="px-4 py-1.5 rounded-full text-xs font-bold font-mono text-teal-600 bg-teal-500/10 border border-teal-500/15 shrink-0 self-start sm:self-auto">2021 - 2024</span>
+                            <span class="px-4 py-1.5 rounded-full text-xs font-bold text-teal-600 bg-teal-500/10 border border-teal-500/15 shrink-0 self-start sm:self-auto">2021 - 2024</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- APP 8: Contact Mail -->
+            <!-- APP 9: Contact Mail -->
              <div id="contact-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios rounded-[2.5rem] p-6 md:p-8">
+                <div class="glass-ios rounded-[2.5rem] p-6 md:p-8 font-sans">
                     <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2">
                         <i class="fa-solid fa-envelope text-pink-500 text-base"></i> Contacts & Telemetry
                     </h2>
@@ -672,7 +717,7 @@
                             </div>
                             <div>
                                 <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">biswa.rakshit@outlook.com</span>
+                                <span class="text-xs font-bold text-slate-800 dark:text-zinc-200">biswa.rakshit@outlook.com</span>
                             </div>
                         </a>
 
@@ -682,7 +727,7 @@
                             </div>
                             <div>
                                 <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Phone</span>
-                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">+91 7595858430</span>
+                                <span class="text-xs font-bold text-slate-800 dark:text-zinc-200">+91 7595858430</span>
                             </div>
                         </a>
 
@@ -692,7 +737,7 @@
                             </div>
                             <div>
                                 <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">LinkedIn</span>
-                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">Biswajit--Rakshit</span>
+                                <span class="text-xs font-bold text-slate-800 dark:text-zinc-200">Biswajit--Rakshit</span>
                             </div>
                         </a>
 
@@ -702,7 +747,7 @@
                             </div>
                             <div>
                                 <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">GitHub</span>
-                                <span class="text-xs font-mono font-bold text-slate-800 dark:text-zinc-200">Biswajit-Rakshit</span>
+                                <span class="text-xs font-bold text-slate-800 dark:text-zinc-200">Biswajit-Rakshit</span>
                             </div>
                         </a>
                     </div>
@@ -737,6 +782,11 @@
             <span class="text-[9px] font-semibold tracking-tight">Sandbox</span>
         </button>
 
+        <button onclick="switchView('notes-app')" id="tab-notes-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
+            <i class="fa-solid fa-book-bookmark text-lg"></i>
+            <span class="text-[9px] font-semibold tracking-tight">Notes</span>
+        </button>
+
         <button onclick="switchView('skills-app')" id="tab-skills-app" class="shrink-0 flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-zinc-500 w-12 transition active:scale-90">
             <i class="fa-solid fa-code text-lg"></i>
             <span class="text-[9px] font-semibold tracking-tight">Skills</span>
@@ -759,7 +809,7 @@
     </nav>
 
     <!-- Universal iOS Toast Overlay -->
-    <div id="system-toast" class="fixed top-14 right-4 z-[99] glass-ios p-4 rounded-2xl max-w-sm border border-iosBlue/30 flex gap-3 shadow-2xl transition-all duration-300 transform translate-x-96 opacity-0 select-none">
+    <div id="system-toast" class="fixed top-14 right-4 z-[99] glass-ios p-4 rounded-2xl max-w-sm border border-iosBlue/30 flex gap-3 shadow-2xl transition-all duration-300 transform translate-x-96 opacity-0 select-none font-sans">
         <div class="p-2 rounded-xl bg-iosBlue text-white shrink-0 h-fit" id="toast-icon">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         </div>
@@ -770,9 +820,9 @@
     </div>
 
     <!-- Minimal attribution block -->
-    <div class="text-center pt-8 pb-24 md:pb-8 text-[11px] text-slate-400 dark:text-zinc-600 select-none relative z-10">
+    <div class="text-center pt-8 pb-24 md:pb-8 text-[11px] text-slate-400 dark:text-zinc-600 select-none relative z-10 font-sans">
         <p>© 2026 Biswajit Rakshit. All rights reserved.</p>
-        <p class="font-mono">Engineered & Curated by Gemini</p>
+        <p>Engineered & Curated by Gemini</p>
     </div>
 
     <!-- Logic JS Module -->
@@ -872,7 +922,7 @@
                     "system_message": "JWT Token generated successfully. Bearer authorization available."
                 }
             };
-            document.getElementById('terminal-json').className = "text-emerald-400";
+            document.getElementById('terminal-json').className = "text-emerald-400 font-mono";
             document.getElementById('terminal-json').textContent = formatJSON(output);
             showToast("JWT Auth Success", "Received mock token keys securely.", "auth");
         }
@@ -888,7 +938,7 @@
                     "detail": "Authentication credentials were not provided in headers.",
                     "required_header": "Authorization: Bearer <your_token>"
                 };
-                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').className = "text-red-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(err);
                 showToast("Authentication Error", "Please acquire JWT credentials first.", "offline");
                 return;
@@ -914,7 +964,7 @@
                     },
                     "message": "Survey recorded successfully. Rate-limiter token spent for current week."
                 };
-                document.getElementById('terminal-json').className = "text-emerald-400";
+                document.getElementById('terminal-json').className = "text-emerald-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(res);
                 showToast("Survey Submitted", "Response securely processed with active anonymity filter.", "auth");
             } else {
@@ -930,7 +980,7 @@
                     "rate_limit_rule": "Limit: 1 submission per week per authenticated employee account.",
                     "context": "Privacy enforcement prevents repeated submissions, reducing target tracing risk."
                 };
-                document.getElementById('terminal-json').className = "text-amber-400";
+                document.getElementById('terminal-json').className = "text-amber-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(err);
                 showToast("Custom Rate Limited", "Request blocked by Django custom Throttle rule.", "throttle");
             }
@@ -946,7 +996,7 @@
                     "HTTP/1.1": "401 Unauthorized",
                     "detail": "Authentication credentials not validated."
                 };
-                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').className = "text-red-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(err);
                 showToast("Access Denied", "Please authenticate via JWT step first.", "offline");
                 return;
@@ -967,7 +1017,7 @@
                         "submission_range": "Current Calendar Week"
                     }
                 };
-                document.getElementById('terminal-json').className = "text-emerald-400";
+                document.getElementById('terminal-json').className = "text-emerald-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(res);
                 showToast("Access Granted", "Data meets safe k-Anonymity metrics.", "auth");
             } else {
@@ -985,7 +1035,7 @@
                     "exception": "PrivacyProtectionGuardError",
                     "detail": "Analytics access is restricted for groups containing less than 5 employees to prevent response trace & profile matching."
                 };
-                document.getElementById('terminal-json').className = "text-red-400";
+                document.getElementById('terminal-json').className = "text-red-400 font-mono";
                 document.getElementById('terminal-json').textContent = formatJSON(err);
                 showToast("Blocked by Privacy Shield", "k-Anonymity threshold not met to protect employee identity.", "throttle");
             }
@@ -1010,7 +1060,7 @@
                 "sandbox_status": "Ready",
                 "instructions": "Console state has been successfully garbage-collected and reset."
             };
-            document.getElementById('terminal-json').className = "text-emerald-400";
+            document.getElementById('terminal-json').className = "text-emerald-400 font-mono";
             document.getElementById('terminal-json').textContent = formatJSON(output);
             showToast("Workspace Reset", "Simulator states reverted to default.", "info");
         }
