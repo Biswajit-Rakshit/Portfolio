@@ -66,14 +66,14 @@
 
         @keyframes liquid-rotate-2 {
             0% { transform: translate(0px, 0px) scale(1); }
-            50% { transform: translate(-100px, -80px) scale(0.85); }
-            100% { transform: translate(60px, -40px) scale(1.1); }
+            50% { transform: translate(-80px, -50px) scale(0.9); }
+            100% { transform: translate(40px, -20px) scale(1.05); }
         }
 
         @keyframes liquid-rotate-3 {
             0% { transform: translate(0px, 0px) scale(1); }
-            50% { transform: translate(120px, -60px) scale(1.25); }
-            100% { transform: translate(-80px, 90px) scale(0.9); }
+            50% { transform: translate(90px, -40px) scale(1.2); }
+            100% { transform: translate(-60px, 60px) scale(0.9); }
         }
 
         /* Frosted Liquid Glass System Cards */
@@ -212,7 +212,7 @@
 
                 <!-- iPadOS Sidebar Utilities -->
                 <div class="border-t border-black/5 dark:border-white/5 pt-4 mt-3 flex items-center justify-center px-2">
-                    <span class="text-[9px] text-slate-400 uppercase tracking-widest font-bold">v2.1</span>
+                    <span class="text-[9px] text-slate-400 uppercase tracking-widest font-bold">v2.1.1</span>
                 </div>
             </div>
         </aside>
@@ -234,7 +234,7 @@
                     </div>
 
                     <!-- Bio Header & Summary -->
-                    <div class="text-center space-y-4 max-w-2xl w-full">
+                    <div class="text-center space-y-4 max-w-2xl w-full font-sans">
                         <div>
                             <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-iosBlue/10 text-iosBlue border border-iosBlue/15 uppercase tracking-wide inline-block mb-3">Developer Profile</span>
                             <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Biswajit Rakshit</h1>
@@ -285,7 +285,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Professional History</h2>
-                                <p class="text-xs text-slate-500">Timeline Overview</p>
                             </div>
                         </div>
                         <span class="text-xs font-bold text-iosGreen bg-iosGreen/10 border border-iosGreen/15 px-3 py-1 rounded-full uppercase">Active</span>
@@ -352,7 +351,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Featured Projects</h2>
-                                <p class="text-xs text-slate-500">Open Source Portfolio</p>
                             </div>
                         </div>
                     </div>
@@ -406,7 +404,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">AegisMind Playground</h2>
-                                <p class="text-xs text-slate-500 font-sans">REST API Simulator</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-2">
@@ -428,7 +425,7 @@
                         <div class="lg:col-span-5 space-y-4">
                             <!-- Auth Panel -->
                             <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
-                                <div class="flex justify-between items-center">
+                                <div class="flex justify-between items-center font-sans">
                                     <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">1. Authentication</span>
                                     <span id="auth-badge" class="px-2 py-0.5 rounded text-[9px] font-bold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/15">MISSING JWT</span>
                                 </div>
@@ -438,10 +435,10 @@
                             </div>
 
                             <!-- Survey Submit Panel -->
-                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
+                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3 font-sans">
                                 <div class="flex justify-between items-center">
                                     <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">2. Submit Telemetry</span>
-                                    <span id="throttle-counter" class="text-[9px] font-mono font-bold text-slate-500">Weekly: 0/1</span>
+                                    <span id="throttle-counter" class="text-[9px] font-mono font-bold text-slate-500 font-mono">Weekly: 0/1</span>
                                 </div>
                                 
                                 <!-- Custom feedback scoring inputs -->
@@ -470,7 +467,7 @@
                             </div>
 
                             <!-- k-Anonymity privacy checker -->
-                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3">
+                            <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/20 border border-white/20 dark:border-zinc-850 space-y-3 font-sans">
                                 <div class="flex justify-between items-center">
                                     <span class="text-xs font-bold text-slate-800 dark:text-zinc-300">3. Query Analytics</span>
                                 </div>
@@ -520,7 +517,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Tech Notes</h2>
-                                <p class="text-xs text-slate-500">Engineering Guides & Documentation</p>
                             </div>
                         </div>
                     </div>
@@ -560,7 +556,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Skills</h2>
-                                <p class="text-xs text-slate-500">Technical Capability</p>
                             </div>
                         </div>
                     </div>
@@ -573,50 +568,99 @@
                         <input onkeyup="filterSkills(this.value)" type="text" placeholder="Type to filter runtime credentials (e.g. Django, SQL)..." class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/45 dark:bg-zinc-900/50 border border-black/5 dark:border-zinc-800 text-xs text-slate-800 dark:text-zinc-200 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-iosBlue transition-all">
                     </div>
 
-                    <!-- Grid Layout for categories -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Modern Grid Layout for categories with Tech Icons -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Languages -->
-                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Languages</span>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Python</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">SQL</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">OOP</span>
+                        <div class="p-5 rounded-2xl bg-white/35 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-4 skill-category-container shadow-sm">
+                            <div class="flex items-center gap-2.5 border-b border-black/5 dark:border-white/5 pb-2">
+                                <span class="text-xl text-yellow-500"><i class="fa-solid fa-code-branch"></i></span>
+                                <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-widest block">Languages</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-brands fa-python text-yellow-500 text-sm"></i> Python
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-database text-blue-500 text-sm"></i> SQL
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-microchip text-emerald-500 text-sm"></i> Object Oriented Programming (OOP)
+                                </span>
                             </div>
                         </div>
 
                         <!-- Frameworks -->
-                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Web Frameworks & Core APIs</span>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Django REST Framework (DRF)</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">JWT Authentication</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Throttling</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Serialization</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Custom Permissions</span>
+                        <div class="p-5 rounded-2xl bg-white/35 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-4 skill-category-container shadow-sm">
+                            <div class="flex items-center gap-2.5 border-b border-black/5 dark:border-white/5 pb-2">
+                                <span class="text-xl text-emerald-600"><i class="fa-solid fa-cubes"></i></span>
+                                <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-widest block">Web Frameworks & Core APIs</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-cubes text-emerald-600 text-sm"></i> Django
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-gears text-indigo-500 text-sm"></i> Django REST Framework (DRF)
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-key text-amber-500 text-sm"></i> JWT Authentication
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-gauge-high text-red-500 text-sm"></i> Throttling
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-shuffle text-violet-500 text-sm"></i> Serialization
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-user-shield text-sky-500 text-sm"></i> Custom Permissions
+                                </span>
                             </div>
                         </div>
 
                         <!-- Data Stores -->
-                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Databases & Storage</span>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">PostgreSQL</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">MySQL</span>
+                        <div class="p-5 rounded-2xl bg-white/35 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-4 skill-category-container shadow-sm">
+                            <div class="flex items-center gap-2.5 border-b border-black/5 dark:border-white/5 pb-2">
+                                <span class="text-xl text-blue-400"><i class="fa-solid fa-database"></i></span>
+                                <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-widest block font-sans">Databases & Storage</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-database text-blue-400 text-sm"></i> PostgreSQL
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-server text-orange-500 text-sm"></i> MySQL
+                                </span>
                             </div>
                         </div>
 
                         <!-- Cloud Technology & Testing -->
-                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-3 skill-category-container">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Ops & Assurance Suites</span>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Amazon Web Services (AWS)</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Git / GitHub</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Swagger / OpenAPI</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Test-Driven Development (TDD)</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Unit Testing</span>
-                                <span class="skill-tag px-3 py-1.5 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition">Postman</span>
+                        <div class="p-5 rounded-2xl bg-white/35 dark:bg-zinc-900/30 border border-white/20 dark:border-zinc-850/60 space-y-4 skill-category-container shadow-sm">
+                            <div class="flex items-center gap-2.5 border-b border-black/5 dark:border-white/5 pb-2">
+                                <span class="text-xl text-orange-500"><i class="fa-brands fa-aws"></i></span>
+                                <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-widest block font-sans">Ops, Cloud & QA Suite</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-brands fa-aws text-orange-500 text-sm"></i> Amazon Web Services (AWS)
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-brands fa-github text-slate-900 dark:text-zinc-200 text-sm"></i> Git / GitHub
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-bullseye text-orange-600 text-sm"></i> Postman
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-book text-emerald-500 text-sm"></i> Swagger / OpenAPI
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-vial-circle-check text-sky-500 text-sm"></i> Test-Driven Development (TDD)
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-list-check text-indigo-500 text-sm"></i> Unit Testing
+                                </span>
+                                <span class="skill-tag px-3 py-2 rounded-xl bg-white/60 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-800 transition flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fa-solid fa-rotate-left text-pink-500 text-sm"></i> Regression Testing
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -634,39 +678,65 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Credentials & Certifications</h2>
-                                <p class="text-xs text-slate-500">Verified Badges</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Certificates Grid -->
                     <div class="space-y-4">
-                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block">Verified Credentials</span>
                         
                         <!-- Udemy DRF -->
-                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase">Udemy Approved</span>
-                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Build REST APIs with Django REST Framework and Python</h4>
-                                <p class="text-xs text-slate-500 dark:text-zinc-400">Professional specialization focusing on deep serializations, custom DRF throttle controllers, and object permissions.</p>
+                                <div class="flex items-center gap-2">
+                                    <!-- Udemy Brand Logo style -->
+                                    <span class="inline-flex items-center gap-1 text-xs font-bold text-violet-600 dark:text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded-md">
+                                        <i class="fa-solid fa-graduation-cap"></i> Udemy
+                                    </span>
+                                </div>
+                                <h4 class="text-base font-extrabold text-slate-900 dark:text-white pt-1">Build REST APIs with Django REST Framework and Python</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">Professional specialization focusing on deep serializations, custom DRF throttle controllers, and object permissions.</p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="https://www.udemy.com/certificate/UC-8dd13dd5-47e1-40f3-945b-d2a8dd22478d/" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                                    View Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
                             </div>
                         </div>
 
                         <!-- Udemy Django -->
-                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/15 uppercase">Udemy Approved</span>
-                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">Python Django: The Practical Guide</h4>
-                                <p class="text-xs text-slate-500 dark:text-zinc-400">Hands-on course focusing on ORM relationship mapping, custom migrations, database templates, and state parameters.</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-flex items-center gap-1 text-xs font-bold text-violet-600 dark:text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded-md">
+                                        <i class="fa-solid fa-graduation-cap"></i> Udemy
+                                    </span>
+                                </div>
+                                <h4 class="text-base font-extrabold text-slate-900 dark:text-white pt-1">Python Django: The Practical Guide</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">Hands-on course focusing on ORM relationship mapping, custom migrations, database templates, and state parameters.</p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="https://www.udemy.com/certificate/UC-6b70e5b3-2483-4e64-9707-f08a18c17b5a/" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                                    View Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
                             </div>
                         </div>
 
                         <!-- HackerRank -->
-                        <div class="p-4 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
+                        <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition">
                             <div class="space-y-1">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/15 uppercase font-sans">HackerRank Verified</span>
-                                <h4 class="text-sm font-extrabold text-slate-900 dark:text-white">SQL - Intermediate</h4>
-                                <p class="text-xs text-slate-500 dark:text-zinc-400">Evaluates nested queries, SQL database relationship constraints, and complex execution logic.</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                                        <i class="fa-solid fa-code"></i> HackerRank
+                                    </span>
+                                </div>
+                                <h4 class="text-base font-extrabold text-slate-900 dark:text-white pt-1">SQL - Intermediate</h4>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">Evaluates nested queries, SQL database relationship constraints, and complex execution logic.</p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="https://www.hackerrank.com/certificates/7c9e0e67deb3" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                                    View Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -684,7 +754,6 @@
                             </div>
                             <div>
                                 <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Academic Record</h2>
-                                <p class="text-xs text-slate-500">Higher Education</p>
                             </div>
                         </div>
                     </div>
@@ -693,7 +762,7 @@
                     <div class="space-y-4">
                         <div class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
                             <div class="space-y-1.5">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Degree</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block font-sans">Degree</span>
                                 <h4 class="text-lg font-extrabold text-slate-900 dark:text-white">Bachelor of Computer Application (BCA)</h4>
                                 <p class="text-sm text-slate-600 dark:text-zinc-400">Techno India Hooghly Campus <span class="hidden sm:inline">|</span><span class="sm:hidden block mt-0.5"></span> West Bengal, India</p>
                             </div>
@@ -704,12 +773,21 @@
             </div>
 
             <!-- APP 9: Contact Mail -->
-             <div id="contact-app" class="app-view space-y-6 hidden">
-                <div class="glass-ios rounded-[2.5rem] p-6 md:p-8 font-sans">
-                    <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-pink-500 text-base"></i> Contacts & Telemetry
-                    </h2>
+            <div id="contact-app" class="app-view space-y-6 hidden">
+                <div class="glass-ios squircle-lg p-6 md:p-8 font-sans">
+                    <!-- Title Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-black/5 dark:border-white/5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-pink-500 text-white flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Contacts</h2>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Clean direct links list without telemetry parameters -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <a href="mailto:biswa.rakshit@outlook.com" class="p-5 rounded-2xl bg-white/30 dark:bg-zinc-900/30 border border-black/5 dark:border-zinc-850 hover:bg-white/50 dark:hover:bg-zinc-900/60 transition flex items-center gap-4">
                             <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center shrink-0">
@@ -754,13 +832,12 @@
                 </div>
             </div>
 
-
         </div>
 
     </div>
 
     <!-- STICKY iOS BOTTOM TAB BAR: Visible only on Mobile (max-width md) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/80 dark:bg-[#1C1C1E]/80 backdrop-blur-lg border-t border-black/5 dark:border-white/5 z-50 flex items-center overflow-x-auto no-scrollbar px-4 gap-6 select-none shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/80 dark:bg-[#1C1C1E]/80 backdrop-blur-lg border-t border-black/5 dark:border-white/5 z-50 flex items-center overflow-x-auto no-scrollbar px-4 gap-6 select-none shadow-[0_-4px_20px_rgba(0,0,0,0.05)] font-sans">
         
         <button onclick="switchView('profile-app')" id="tab-profile-app" class="tab-btn-active shrink-0 flex flex-col items-center justify-center gap-1 text-iosBlue w-12 transition active:scale-90">
             <i class="fa-solid fa-user-astronaut text-lg"></i>
@@ -1069,7 +1146,6 @@
         function filterSkills(query) {
             const cleanQuery = query.toLowerCase().trim();
             const tags = document.querySelectorAll('.skill-tag');
-            const categories = document.querySelectorAll('.skill-category-container');
 
             tags.forEach(tag => {
                 const txt = tag.textContent.toLowerCase();
